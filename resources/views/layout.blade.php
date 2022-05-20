@@ -56,14 +56,19 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
 				@if (Auth::user()->role =='admin' || Auth::user()->role =='teacher')
-					<li class="menu-label">Admin Section</li>
-					<li> 
-						<a href="{{route('admin.dashboard')}}">
-							<div class="parent-icon"><i class="bx bx-home"></i>
-							</div>
-							<div class="menu-title">Dashboard</div>
-						</a>
-					</li>
+					@if (Auth::user()->role =='admin' )
+						<li class="menu-label">Admin Section</li>
+						<li> 
+							<a href="{{route('admin.dashboard')}}">
+								<div class="parent-icon"><i class="bx bx-home"></i>
+								</div>
+								<div class="menu-title">Dashboard</div>
+							</a>
+						</li>
+					@endif
+					@if (Auth::user()->role =='teacher' )
+						<li class="menu-label">Faculty Section</li>
+					@endif
 					<li> 
 						<a href="{{route('admin.view')}}">
 							<div class="parent-icon"><i class="bx bx-user-pin"></i>
@@ -255,7 +260,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 						</a>
 					</li>
 					<li>
-						<a href="learn.catking.in" target="blank">
+						<a href="https://learn.catking.in" target="blank">
 							<div class="parent-icon"><i class="bx bx-home-circle"></i>
 							</div>
 							<div class="menu-title">Student Dashboard</div>
@@ -328,8 +333,10 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<img src="{{ Auth::user()->avatar }}" class="user-img" alt="user avatar">                    
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end">
-							<li><a class="dropdown-item" href="{{route('profile.account')}}"><i class="bx bx-user"></i><span>Profile</span></a>
-							</li>
+							@if (Auth::user()->role !='teacher' )
+								<li><a class="dropdown-item" href="{{route('profile.account')}}"><i class="bx bx-user"></i><span>Profile</span></a>
+								</li>
+							@endif
 							@if (Auth::user()->role =='admin')
 								<li><a class="dropdown-item" href="{{route('admin.change-password')}}"><i class="bx bx-user"></i><span>Change Password</span></a></li>
 							@else
@@ -382,8 +389,8 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 				<img src="{{asset('assets/images/kpmgok.png')}}" style="max-height:35px;"/>
 			</div>
 			<p class="mb-0">Copyright © 2022. All right reserved.
-				<span style="font-size:25px;" class="mx-2"><a href="https://www.youtube.com/c/RahulCatking" class="text-body"><i class="lni lni-youtube"></i></a></span>
-				<span style="font-size:20px;" class="mx-2"><a href="https://www.instagram.com/catkingeducare/?hl=en" class="text-body"><i class="lni lni-instagram"></i></a></span>
+				<span style="font-size:25px;" class="mx-2"><a href="https://www.youtube.com/c/RahulCatking" class="text-body" target="_blank"><i class="lni lni-youtube"></i></a></span>
+				<span style="font-size:20px;" class="mx-2"><a href="https://www.instagram.com/catkingeducare/?hl=en" class="text-body" target="_blank"><i class="lni lni-instagram"></i></a></span>
 			</p>
 		</footer>
 		<!-- Admin Message Modal -->

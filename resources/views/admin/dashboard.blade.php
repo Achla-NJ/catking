@@ -274,7 +274,7 @@
          <div class="card-header bg-transparent mb-3 px-0">
             <div class="row gy-3">
                <div class="col-12">
-                  <h6 class="mb-0">Growth of Students</h6>
+                  <h6 class="mb-0">Growth % of Students</h6>
                </div>
             </div>
          </div>

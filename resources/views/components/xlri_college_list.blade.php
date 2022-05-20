@@ -1,7 +1,7 @@
-<p style="color:#006699; font-size:18px;margin-top: 20px;">Expected Top B-School cut-offs through XAT percentile</p>
+<p style="color:#6b7a99; font-size:18px;margin-top: 20px;">Expected Top B-School cut-offs through XAT percentile</p>
 <table class="table table-striped">
     <thead>
-        <tr style="background-color:#006699!important;color:white;">
+        <tr style="background-color:#6b7a99!important;color:white;">
             <th scope="col">College Name</th>
             <th scope="col">XAT %ile cut-off (Overall)</th>
         </tr>

@@ -16,10 +16,10 @@ a{
                </h5>
                <table class="table table-striped">
                    <tr>
-                       <th class="col-sm-5" color="#006699"><b>Topic</b></th>
-                       <th class="col-sm-3" color="#006699"><b>Topic</b></th>
-                       <th class="col-sm-2" color="#006699"><b>Timing</b></th>
-                       <th class="col-sm-2" color="#006699"><b>Link</b></th>
+                       <th class="col-sm-5" color="#6b7a99"><b>Topic</b></th>
+                       <th class="col-sm-3" color="#6b7a99"><b>Topic</b></th>
+                       <th class="col-sm-2" color="#6b7a99"><b>Timing</b></th>
+                       <th class="col-sm-2" color="#6b7a99"><b>Link</b></th>
                    </tr>
                    <tr>
                        <td>No IIM Calls, but targetting MBA this year</td>
@@ -88,10 +88,10 @@ a{
          <div class="tab-content"  id="myTabContent">
             
             <div id="menu0" class="tab-pane fade active show">
-               <h4 style='color:#006699;'><strong>Colleges through 97 to 99%tile</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Colleges through 97 to 99%tile</strong></h4>
                <table class="table table-striped" style="width:90% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                         <th scope="col">VARC %tile</th>
@@ -181,10 +181,10 @@ a{
             </div>
 
             <div id="menu1" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>Colleges through 95 to 97%tile</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Colleges through 95 to 97%tile</strong></h4>
                <table class="table table-striped" style="width:90% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                         <th scope="col">VARC %tile</th>
@@ -273,10 +273,10 @@ a{
                </table>
             </div>
             <div id="menu2" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>Colleges through 90 to 95%tile</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Colleges through 90 to 95%tile</strong></h4>
                <table class="table table-striped" style="width:90% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                         <th scope="col">VARC %tile</th>
@@ -404,10 +404,10 @@ a{
                </table>
             </div>
             <div id="menu3" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>Colleges through above 80 to 90%tile</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Colleges through above 80 to 90%tile</strong></h4>
                <table class="table table-striped" style="width:90% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                         <th scope="col">VARC %tile</th>
@@ -420,10 +420,10 @@ a{
                </table>
             </div>
             <div id="menu4" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>Colleges through 80 to 90%tile</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Colleges through 80 to 90%tile</strong></h4>
                <table class="table table-striped" style="width:90% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                         <th scope="col">VARC %tile</th>
@@ -576,10 +576,10 @@ a{
                </table>
             </div>
             <div id="menu5" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>Colleges through 70 to 80%tile</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Colleges through 70 to 80%tile</strong></h4>
                <table class="table table-striped" style="width:90% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                         <th scope="col">VARC %tile</th>
@@ -911,10 +911,10 @@ a{
                </table>
             </div>
             <div id="menu6" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>Colleges through 60 to 70%tile</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Colleges through 60 to 70%tile</strong></h4>
                <table class="table table-striped" style="width:90% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                         <th scope="col">VARC %tile</th>
@@ -1018,10 +1018,10 @@ a{
                </table>
             </div>
             <div id="menu7" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>Colleges through 55 to 60%tile</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Colleges through 55 to 60%tile</strong></h4>
                <table class="table table-striped" style="width:90% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                         <th scope="col">VARC %tile</th>
@@ -1098,10 +1098,10 @@ a{
                <p>We recommend you to start preparing for other examinations. <a href="https://courses.catking.in/non-cat-exams/">Click here for Non-CAT Exam Course Details</a></p>
             </div>
             <div id="menu8" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>B-Schools with no Sectional CutOff</strong></h4>
+               <h4 style='color:#6b7a99;'><strong>B-Schools with no Sectional CutOff</strong></h4>
                <table class="table table-striped" style="width:60% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                      </tr>
@@ -1187,10 +1187,10 @@ a{
                </table>
             </div>
             <div id="menu9" class="tab-pane fade">
-               <h4 style='color:#006699;'><strong>Top Profile Based B-Schools </strong></h4>
+               <h4 style='color:#6b7a99;'><strong>Top Profile Based B-Schools </strong></h4>
                <table class="table table-striped" style="width:60% !important;">
                   <thead>
-                     <tr style="background-color:#006699!important;color:white;">
+                     <tr style="background-color:#6b7a99!important;color:white;">
                         <th scope="col">College</th>
                         <th scope="col">Overall %tile</th>
                      </tr>
