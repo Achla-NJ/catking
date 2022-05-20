@@ -1,0 +1,117 @@
+.row.profile-image {
+  max-width: 100px;
+}
+.row.profile .nav-link {
+  border-radius: 0;
+  background: #E8ECEF;
+}
+.row.profile .nav-link > div {
+  justify-content: center;
+}
+.row.profile .nav-link.active {
+  background: #6B7A99;
+}
+.row.profile .tab-content {
+  position: relative;
+}
+.row.profile .tab-content::before {
+  content: "";
+  width: 95%;
+  height: 1px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  position: absolute;
+  box-shadow: 0 0 10px;
+}
+@media (max-width: 992px) {
+  .row.profile .tab-title {
+    display: none;
+  }
+}
+
+.avatar-loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-loader.show {
+  display: flex;
+}
+.avatar-loader .spinner-grow {
+  background: #6B7A99;
+}
+.avatar-img {
+  width: 150px;
+}
+.avatar-update {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7A99;
+  font-size: 25px;
+  line-height: 1;
+  padding: 7px;
+  left: 7px;
+  top: 3px;
+  cursor: pointer;
+  box-shadow: 0 0 5px -1px #6B7A99;
+}
+
+.star {
+  color: #6B7A99;
+  background: transparent;
+  font-size: 13px;
+  line-height: 1;
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #6B7A99;
+  box-shadow: none;
+  margin-right: 10px;
+}
+.star-col > .col-12:nth-child(2n+2) {
+  background: #E8ECEF;
+}
+.star-review {
+  display: flex;
+  flex-flow: row wrap;
+}
+.star.active {
+  color: #fff;
+  border: 1px solid #ffc107;
+  box-shadow: 0 0 5px #ffc107;
+  background: #ffc107;
+}
+.star:last-child {
+  margin-right: 0;
+}
+
+.accordion-button::after {
+  background-image: url(../images/icons/plus.png) !important;
+  transform: none;
+}
+.accordion-button:not(.collapsed) {
+  color: #fff !important;
+  background: #6B7A99 !important;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../images/icons/minus.png) !important;
+}
+.accordion-button:hover {
+  color: #32393f !important;
+  background: #D7DEE4 !important;
+}
+.accordion-button:focus {
+  border-color: rgba(0, 0, 0, 0.13) !important;
+  box-shadow: none !important;
+}/*# sourceMappingURL=profile.css.map */
