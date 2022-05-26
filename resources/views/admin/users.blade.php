@@ -253,7 +253,7 @@
                 <b-col cols="12" id="table-container">
                     <b-table
                         ref="refListTable"
-                        class="position-relative overflow-hidden"
+                        class="position-relative"
                         :items="getTableData"
                         responsive
                         :fields="fields"
@@ -396,8 +396,8 @@
     <script src="https://unpkg.com/bootstrap-vue@2.21.2/dist/bootstrap-vue.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@2.21.2/dist/bootstrap-vue-icons.js"></script>
     <script src="https://unpkg.com/vue-select@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>--}}
 
 @endsection
 
@@ -651,13 +651,13 @@
         });
 
     </script>
-    <script>
+    {{--<script>
         gsap.registerPlugin(Draggable);
         Draggable.create('#table-container .table-responsive table',{
             bounds:document.getElementById('table-container'),
             type:'x',
             //autoScroll:1,
         })
-    </script>
+    </script>--}}
 @endsection
 

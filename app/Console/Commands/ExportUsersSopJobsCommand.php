@@ -70,7 +70,14 @@ class ExportUsersSopJobsCommand extends Command
                     'file' => $fileName,
                     'status' => 'completed',
                 ]);
+            }else{
+                $export->update([
+                    'file' => '',
+                    'status' => 'files_not_exists',
+                ]);
             }
+
+
         }
 
         $this->info("Completed ".count($exports)." Exports File(s)");

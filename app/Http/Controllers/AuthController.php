@@ -53,6 +53,12 @@ class AuthController extends Controller
             $user->role = 'student' ;
             $signup = $user->save();
             if($signup){
+                $details = [
+                    'title' => 'New Registration',
+                    'body' => $user->email.' Create New Account',
+                ];
+
+                \Mail::to((env('MAIL_FROM_ADDRESS')))->send(new Mail($details));
                 return redirect()->route('profile.account');
             }
         }
