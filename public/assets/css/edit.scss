@@ -48,6 +48,7 @@ html{
     }
 }
 .btn{
+    text-transform: capitalize;
     &-primary{
         background-color: $color-primary !important;
         border-color: $color-primary !important;

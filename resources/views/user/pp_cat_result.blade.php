@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','Cat Predictor')
+@section('title','CAT Predictor')
 @section('css_plugin')
 <link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
 <link href="{{asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
@@ -19,7 +19,7 @@
               <a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
            @endif
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Personal Interviews</li>
+            <li class="breadcrumb-item active" aria-current="page">CAT Predictor</li>
          </ol>
       </nav>
    </div>

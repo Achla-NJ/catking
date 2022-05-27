@@ -266,50 +266,20 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<div class="menu-title">Student Dashboard</div>
 						</a>
 					</li>
-					{{-- <li>
-						<a href="#">
-							<div class="parent-icon"><i class='bx bx-award'></i>
+					<li>
+						<a href="https://www.youtube.com/c/RahulCatking" target="blank">
+							<div class="parent-icon"><i class="lni lni-youtube"></i>
 							</div>
-							<div class="menu-title">CAT 2022 Course</div>
+							<div class="menu-title">YouTube</div>
 						</a>
 					</li>
 					<li>
-						<a href="#">
-							<div class="parent-icon"><i class='bx bx-line-chart'></i>
+						<a href="https://www.instagram.com/catkingeducare/?hl=en" target="blank">
+							<div class="parent-icon"><i class="lni lni-instagram"></i>
 							</div>
-							<div class="menu-title">Profile Booster Course</div>
+							<div class="menu-title">Instagram</div>
 						</a>
 					</li>
-					<li>
-						<a href="#">
-							<div class="parent-icon"><i class='bx bx-bookmark-plus'></i>
-							</div>
-							<div class="menu-title">Non-CAT MBA Entrance Course</div>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div class="parent-icon"><i class='bx bx-book-bookmark'></i>
-							</div>
-							<div class="menu-title">GD/WAT PI Course</div>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" class="has-arrow">
-							<div class="parent-icon"><i class='bx bx-customize'></i>
-							</div>
-							<div class="menu-title">College Cut-Offs</div>
-						</a>
-						<ul class="mm-collapse">
-							@php $pages= @\App\Models\CustomPage::all() @endphp
-								@foreach ($pages as $page)
-								<li>
-									<a href="{{route('admin.view-page',$page->id)}}"><i class="bx bx-right-arrow-alt"></i>{{$page->link_text}}</a>
-								</li>
-								@endforeach
-							</li>
-						</ul>
-					</li> --}}
 				@endif
 			</ul>
 			<!--end navigation-->
@@ -366,9 +336,22 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 					<div class="row">
 						<div class="col">
 							<div class="alert border-0 border-start border-5 border-info alert-dismissible fade show border-primary-1">
-								<div >
-									{{ $broadcast_message_title }}-Check this out for Admin announcements
-									<button class="btn btn-sm btn-outline-dark ms-2" data-bs-toggle="modal" data-bs-target="#adminmsg"><i class="bx bx-message-rounded-detail me-2"></i>View</button>
+								<div class="align-items-center d-flex">
+									<div class="d-inline-block px-3">
+										<div class="font-13 text-danger">Announcements</div>
+										<div class="row g-2 align-items-center">
+											<div class="col">
+												<div class="font-18">
+													{{ $broadcast_message_title }}
+												</div>
+											</div>
+											<div class="col-auto">
+												<button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#adminmsg"><i class="bx bx-message-rounded-detail me-2"></i>
+													View
+												</button>
+											</div>
+										</div>
+									</div>
 								</div>
 								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 							</div>
@@ -384,14 +367,32 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 		<!--end overlay-->
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
-		<footer class="page-footer" style="padding: 20px 7px;">
-			<div style="position: absolute;	right: 65px; bottom:20px;">
+		<footer class="page-footer" style="padding: 10px 7px;">
+			{{-- <div style="position: absolute;	right: 65px; bottom:20px;">
 				<img src="{{asset('assets/images/kpmgok.png')}}" style="max-height:35px;"/>
+			</div> --}}
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col">
+						<div class="h6 text-start mb-0">Follow Us</div>
+						<div class="d-flex aling-items-center">
+							<a href="https://www.youtube.com/c/RahulCatking" class="d-inline-flex font-30 text-body me-2">
+								<i class="lni lni-youtube"></i>
+							</a>
+							<a href="https://www.instagram.com/catkingeducare/?hl=en" class="d-inline-flex font-24 text-body">
+								<i class="lni lni-instagram-original" style="line-height: 1.3"></i>
+							</a>
+						</div>
+					</div>
+					<div class="col">
+						<p class="mb-0">Copyright © 2022. All right reserved.
+						</p>
+					</div>
+					<div class="col">
+						<img src="{{asset('assets/images/kpmgok.png')}}" class="img-fluid"/>
+					</div>
+				</div>
 			</div>
-			<p class="mb-0">Copyright © 2022. All right reserved.
-				<span style="font-size:25px;" class="mx-2"><a href="https://www.youtube.com/c/RahulCatking" class="text-body" target="_blank"><i class="lni lni-youtube"></i></a></span>
-				<span style="font-size:20px;" class="mx-2"><a href="https://www.instagram.com/catkingeducare/?hl=en" class="text-body" target="_blank"><i class="lni lni-instagram"></i></a></span>
-			</p>
 		</footer>
 		<!-- Admin Message Modal -->
 		<div class="modal fade" id="adminmsg" tabindex="-1" aria-labelledby="adminmsg" aria-hidden="true">
@@ -419,6 +420,9 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 	<script src="{{asset('assets/plugins/notifications/js/notifications.min.js')}}"></script>
 	<!--app JS-->
 	<script src="{{asset('assets/js/app.js')}}"></script>
+	<script>
+		
+	</script>
 	@yield('script')
 </body>
 

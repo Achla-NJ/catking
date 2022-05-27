@@ -57,72 +57,74 @@
                   <div class="card sop_div" id="college_row_{{$sop_key}}">
                      <div class="card-body">
                         <div class="row align-items-center">
-                           <div class="col-12 col-sm-auto order-sm-2">
-                              <button class="d-block w-auto ms-auto btn btn-danger btn-sm" type="button" onclick="remove_row('#college_row_{{$sop_key}}','{{$clg_id}}','{{$college}}')"><i class="bx bx-trash m-0"></i></button>
+                           <div class="col-12 col-xl order-xl-2">
+								<div class="row align-items-center justify-content-center">
+									<div class="col-auto">
+										@if(!empty($sop_file))
+										<a href="{{route('user-files', $sop_file)}}" class="btn btn-warning btn-sm" target="_blank" >view</a>
+										@endif
+									</div>
+									@if (!empty($sop_review))									
+									<div class="col-auto">
+										<a role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$sop_key}}"class="btn btn-dark btn-sm" target="_blank" >View Review</a>
+										<div class="modal fade" id="staticBackdrop{{$sop_key}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+											<div class="modal-dialog">
+											  <div class="modal-content">
+												<div class="modal-header">
+												  <h5 class="modal-title" id="staticBackdropLabel">{{$college}} Review</h5>
+												  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													<div class="mb-3">
+														<div class="row">
+															<div class="col-md-6">
+																<div class="row">
+																	<div class="col-md-6"><b>Reviewd By:</b></div>
+																	<div class="col-md-6"><p>{{$sop->review_by}}</p></div>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="row">
+																	<div class="col-md-6"><b>Review Date</b></div>
+																	<div class="col-md-6"><p>{{date('d M, Y',strtotime($sop->review_date))}}</p></div>
+																</div>
+															</div>
+															<div class="col-md-12"><b>Review</b></div>
+															<div class="col-md-12"><p>{{$sop->review}}</p></div>
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer">
+												  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+												</div>
+											  </div>
+											</div>
+										  </div>
+										
+									</div>
+									@endif
+									<div class="col-auto">
+										<button class="d-block w-auto ms-auto btn btn-danger btn-sm" type="button" onclick="remove_row('#college_row_{{$sop_key}}','{{$clg_id}}','{{$college}}')"><i class="bx bx-trash m-0"></i>
+										</button>
+									</div>
+								</div>
                            </div>
-                           <div class="col">
+                           <div class="col-lg-8">
                               <div class="row">
-                                 <div class="col-md-5">
+                                 <div class="col-md-6">
                                     <div class="mb-3">
                                        <label for="" class="form-label">College Name</label>
 									   <p class="form-control">{{$college}}</p>
                                        <input type="hidden" name="sop[{{$sop_key}}][college]" readonly value="{{$sop->college_id}}" class="form-control">
                                     </div>
                                  </div>
-                                 <div class="col-md-4">
+                                 <div class="col-md-6">
                                     <div class="mb-3">
                                        <label for="" class="form-label">Upload SOP</label>
                                        <input type="file" onchange="getSopfile(this,'#sop_file_{{$sop_key}}')" class="form-control">
                                        <input type="hidden" name="sop[{{$sop_key}}][sop_file]" id="sop_file_{{$sop_key}}" value="{{$sop_file}}">
-
-                                    </div>
-									
+                                    </div>									
                                  </div>
-								 <div class="col-md-1 m-auto">
-									@if(!empty($sop_file))
-									<a href="{{route('user-files', $sop_file)}}" class="btn btn-warning btn-sm" target="_blank" >view</a>
-									@endif
-								</div>
-								<div class="col-md-2 m-auto">
-									@if (!empty($sop_review))
-									
-									<a role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$sop_key}}"class="btn btn-dark btn-sm" target="_blank" >View Review</a>
-									<div class="modal fade" id="staticBackdrop{{$sop_key}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-										<div class="modal-dialog">
-										  <div class="modal-content">
-											<div class="modal-header">
-											  <h5 class="modal-title" id="staticBackdropLabel">{{$college}} Review</h5>
-											  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-											</div>
-											<div class="modal-body">
-												<div class="mb-3">
-													<div class="row">
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-6"><b>Reviewd By:</b></div>
-																<div class="col-md-6"><p>{{$sop->review_by}}</p></div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-6"><b>Review Date</b></div>
-																<div class="col-md-6"><p>{{date('d M, Y',strtotime($sop->review_date))}}</p></div>
-															</div>
-														</div>
-														<div class="col-md-12"><b>Review</b></div>
-														<div class="col-md-12"><p>{{$sop->review}}</p></div>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-											  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-											</div>
-										  </div>
-										</div>
-									  </div>
-									
-									@endif
-								</div>
                               </div>
                            </div>
                         </div>

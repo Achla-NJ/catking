@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','Iift Result')
+@section('title','IIFT Result')
 
 @section('css_plugin')
 <link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}"   rel="stylesheet" />
@@ -24,7 +24,7 @@
                   <a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
                @endif
                </li>
-               <li class="breadcrumb-item active" aria-current="page">Export Data</li>
+               <li class="breadcrumb-item active" aria-current="page">IIFT Result</li>
             </ol>
          </nav>
       </div>

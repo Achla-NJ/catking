@@ -65,13 +65,13 @@
                                  @php
                                    $exm_name = $exam_type == 'other'?'Other Exams': strtoupper($exam_type);
                                  @endphp
-                                 <div class="col me-2 bg-primary-4 font-20 h5  p-2  mb-0" >{{$exm_name}} Details</div>
+                                 <div class="col me-2 bg-primary-4 font-20 h5  p-2  mb-0" >{{$exm_name}} Result</div>
                                    
                                     <button class="d-block w-auto ms-auto btn btn-danger btn-sm" type="button"onclick="removeExam('#exam_row_{{$exam_key}}','{{ucfirst($exam_type)}}','{{$exam_type}}')"><i class="bx bx-trash m-0"></i></button>
                                    
                               </div>
                               <div class="col-12" >
-                                 <div class="row">
+                                 <div class="row gx-2">
                                     <div class="col-md-2 disp">
                                        <div class="mb-3">
                                           @if ($exam_type == 'other')
@@ -102,13 +102,13 @@
                                           <input type="text" name="exam[{{$exam_key}}][score]" id="score" class="form-control"value="{{$score}}">
                                        </div>
                                     </div>
-                                    <div class="col-md-2 cat_{{$exam_key}} {{$display}} disp">
+                                    <div class="col-md-2 col-lg-auto cat_{{$exam_key}} {{$display}} disp">
                                        <div class="mb-3">
                                           <label for="" class="form-label">Percentile (if available)</label>
                                           <input type="text" name="exam[{{$exam_key}}][percentile]" id="percentile" class="form-control percentile" value="{{$percentile}}">
                                        </div>
                                     </div>
-                                    <div class="col-md-3 cat_{{$exam_key}} {{$display}} disp">
+                                    <div class="col-md-3  col-lg cat_{{$exam_key}} {{$display}} disp">
                                        <div class="mb-3">
                                           <label for="" class="form-label">Score Card</label>
                                           <input type="file"  id="score_card_file" class="form-control" onchange="getScorefile(this,'#card_file_{{$exam_key}}')">
@@ -116,7 +116,7 @@
                                        </div>
                                     </div>
                                        @if(!empty($score_card))
-                                       <div class="col-md-2 cat_{{$exam_key}} {{$display}} my-auto">
+                                       <div class="col-md-2 col-lg-auto cat_{{$exam_key}} {{$display}} my-auto">
                                           <a href="{{route('user-files', $score_card)}}" class="btn btn-warning btn-sm" target="_blank" >View</a>
                                        </div>
                                        @endif
@@ -174,7 +174,7 @@
                                           @endif	
                                        @endforeach
 
-
+ 
                                      <option value="other">Other</option>
                                   </select>
                                   <input type="hidden" value="{{route('profile.add-exam')}}" id="add-exam">

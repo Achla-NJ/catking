@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','Cat Predictor')
+@section('title','CAT Predictor')
 @section('css_plugin')
 <link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
 <link href="{{asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
@@ -19,7 +19,7 @@
                <a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
             @endif
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Personal Interviews</li>
+            <li class="breadcrumb-item active" aria-current="page">CAT Predictor</li>
          </ol>
       </nav>
    </div>
@@ -37,7 +37,7 @@
          <div class="col-12">
             <div class="mb-3">
                <label for="name" class="form-label">Full Name<span style="color:red;">*</span></label>
-               <input type="text" name="name" id="name" class="form-control" value="{{$user->name}}" required>
+               <input type="text" name="name" id="name" class="form-control"  value="{{$user->name}}" required readonly>
             </div>
          </div>
          <div class="col-12">
@@ -55,25 +55,26 @@
          <div class="col-12">
             <div class="mb-3">
                <label for="w-phone" class="form-label">WhatsApp Phone</label>
-               <input type="phone" name="whatsapp_number" id="w-phone" class="form-control" value="{{$user->whatsapp_number}}" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+               <input type="phone" name="whatsapp_number" id="w-phone" class="form-control" value="{{$user->whatsapp_number}}" readonly required>
             </div>
          </div>
          <div class="col-12">
             <div class="mb-3">
                <label for="dob" class="form-label">Date of Birth<span style="color:red;">*</span></label>
-               <input type="date" name="dob" id="dob" class="form-control" value="{{$user->dob}}" required>
+               <input type="date" name="dob" id="dob" class="form-control" value="{{$user->dob}}" required readonly>
             </div>
          </div>
          <div class="col-12">
             <div class="mb-3">
                <label for="address" class="form-label">City</label>
-               <select name="city" id="city" class="form-select">
+               <input type="text" name="city" id="city" class="form-control" readonly required value="{{$user->city}}">
+               {{-- <select name="city" id="city" class="form-select">
                   <option value="">-Select-</option>
                   {{$cities = App\Models\City::all()}}
                   @foreach ($cities as $city)
                      <option value="{{$city->id}}" {{$user->city == $city->id ? "selected=selected" :""}}>{{$city->name}}</option>
                   @endforeach
-               </select>
+               </select> --}}
             </div>
          </div>
       </div>

@@ -471,7 +471,7 @@
                                     <div class="row">
                                        <div class="col-md-6">
                                           <div class="mb-3">
-                                             <label class="form-label">Worked For</label>
+                                             <label class="form-label">Employment Type</label>
                                              <select name="works[{{$work_key}}][work_type]" id="" class="form-select">
                                                 <option value="full_time" {{$work_type == 'full_time' ? "selected=selected":""}}>Full Time</option>
                                                 <option value="part_time" {{$work_type == 'part_time' ? "selected=selected":""}}>Part Time</option>

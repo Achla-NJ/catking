@@ -7,7 +7,7 @@
         <div class="row" >
             <div class="col-md-6">
             <div class="mb-3">
-                    <label for="" class="form-label">Worked For</label>
+                    <label for="" class="form-label">Employment Type</label>
                     <select name="works[{{$relation}}][work_type]" id="" class="form-select">
                         <option value="full_time" >Full Time</option>
                         <option value="part_time" >Part Time</option>

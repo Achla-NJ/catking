@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','Cat Result')
+@section('title','CAT Result')
 
 @section('css_plugin')
 <link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}"   rel="stylesheet" />
@@ -24,7 +24,7 @@
                   <a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
                @endif
                </li>
-               <li class="breadcrumb-item active" aria-current="page">Export Data</li>
+               <li class="breadcrumb-item active" aria-current="page">CAT Result</li>
             </ol>
          </nav>
       </div>
@@ -47,7 +47,7 @@
                <div class="col-lg-11 mx-auto">
                   <p><strong>Steps to get Response Sheet URL:</strong>
                      <br>
-                     <br>1. Login to CAT 2021 official website
+                     <br>1. Login to CAT {{now()->year}} official website
                      <a href="https://iimcat.ac.in" terget="_blank">https://iimcat.ac.in</a>
                      <br>2. Click on "Candidate Response"
                      <br>3. Copy Link Address<span style="color:red;">*</span>

@@ -3,6 +3,14 @@
 <link href="{{asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
 @endsection @section('page_css')
 <link rel="stylesheet" href="{{asset('assets/css/profile.css')}}" />
+<style>
+    .accordion-body{position: relative;z-index: 1;}
+    .ineterview-overlay{
+        position: absolute;
+        width: 100%;height: 100%;left: 0;top: 0;z-index: 2;
+        display: flex;align-items: center;justify-content: center;
+    }
+</style>
 @endsection @section('breadcrumb')
 <div class="page-breadcrumb d-flex align-items-center mb-3">
     <div class="breadcrumb-title pe-3">Home</div>
@@ -17,10 +25,11 @@
         </nav>
     </div>
 </div>
-@endsection @section('main_content')
+@endsection
+ @section('main_content')
 
         <div class="row">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-12 col-md-auto">
                 <div class="card">
                     <div class="card-body">
                 <form action="{{route('admin.search-pi-student')}}" method="post" id="search-form" onsubmit="return false;">
@@ -115,7 +124,7 @@
                         // console.log(response.data.review.length);
                         if(response.data.review.length > 0){
                             for (var i = 0; i < response.data.review.length; i++){
-                                addMore(response.data.review[i].id,response.data.review[i].student_id,response.data.review[i].teacher,response.data.review[i].particulars,response.data.review[i].date,response.data.review[i].selection,response.data.review[i].type,response.data.review[i].remark);
+                                addMore(response.data.review[i].id,response.data.review[i].student_id,response.data.review[i].teacher,response.data.review[i].particulars,response.data.review[i].date,response.data.review[i].selection,response.data.review[i].type,response.data.review[i].remark,true);
                             }
                         }else{
                             addMore();
@@ -146,7 +155,12 @@
 
     });
 
-    function addMore(sid='',student_id='',teacher='',particulars='',date='',selection='',type='',remark=''){
+    let editInterview = (e,el) => {
+        e.preventDefault();
+        e.target.remove();          
+        document.getElementById('overlay-'+el).remove();
+    }
+    function addMore(sid='',student_id='',teacher='',particulars='',date='',selection='',type='',remark='',haveData=false){
         inc++;
         var id = $("#student_id").val();
         // console.log(id)
@@ -160,16 +174,22 @@
         var html = `
             <div class="accordion-item" id="interview_review_${counter}">
                 <h2 class="accordion-header" id="headingOne${counter}">
-                    <a href="javascript:void(0)" class="accordion-button" type="button" >
+                    <a href="javascript:void(0)" class="accordion-button col" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne${counter}">
                         Personal Interview #${inc}
-                        <button class="btn btn-${(sid == '') ?'dark':'warning'} btn-sm mx-2" type="button" onclick="email('${student_id}','Personal Interview')"><i class="bx bx-mail-send"></i></button>
-                        ${(sid === '') ? `<button class="btn btn-danger btn-sm" type="button" onclick="remove('#interview_review_${counter}')">X</button>`: `<button class="btn btn-danger btn-sm" type="button" onclick="deleterow('${sid}', '#interview_review_${counter}')">X</button>`}
-
                     </a>
                 </h2>
                 <div id="collapseOne${counter}" class="accordion-collapse collapse  show aria-labelledby="headingOne${counter}" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <form action="{{route('admin.store-pi-review')}}" method="post" id="form${counter}">
+                        <div class="actions mb-3 text-center text-lg-end">
+                            ${haveData ? `<button class="btn btn-dark btn-sm ms-2" onclick="editInterview(event,${counter})">Edit</button>`:''} 
+                            <button class="btn btn-${(sid == '') ?'dark':'warning'} btn-sm " type="button" onclick="email('${student_id}','Personal Interview')"><i class="bx bx-mail-send"></i></button>
+                        ${(sid === '') ? `<button class="btn btn-danger btn-sm" type="button" onclick="remove('#interview_review_${counter}')">X</button>`: `<button class="btn btn-danger btn-sm" type="button" onclick="deleterow('${sid}', '#interview_review_${counter}')">X</button>`}
+                        
+                        </div>                        
+                        <form class="position-relative d-inline-block" action="{{route('admin.store-pi-review')}}" method="post" id="form${counter}">
+                            ${haveData ? `
+                                <div class="ineterview-overlay" id="overlay-${counter}"></div>
+                            `:''}
                             @csrf
                             <input type="hidden" name="url" value='admin.personal-interviews'>
                             <input type="hidden" name="review[student_id]" value="${student_id}" class="student_id">

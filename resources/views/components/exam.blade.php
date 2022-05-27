@@ -13,7 +13,7 @@
         <div class="row align-items-center g-2">
 
             <div class="col-12 d-flex col-md mb-4">
-                <div class="col me-2 bg-primary-4 font-20 h5  p-2  mb-0">{{$exm_name}} Details</div>
+                <div class="col me-2 bg-primary-4 font-20 h5  p-2  mb-0">{{$exm_name}} Result</div>
                 <button class="d-block w-auto ms-auto btn btn-danger btn-sm" type="button"onclick="removeExam('#exam_row_{{$relation_count}}','{{$item}}','{{$exm_name}}')"><i class="bx bx-trash m-0"></i></button>
             </div>
           
@@ -46,22 +46,22 @@
                             <input type="text" name="exam[{{$relation_count}}][score]" id="score" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </div>
                     </div>
-                    <div class="col-md-2 cat_{{$item}} {{$display}} disp">
+                    <div class="col-md-2 col-lg-auto cat_{{$item}} {{$display}} disp">
                         <div class="mb-3">
                             <label for="" class="form-label">Percentile (if available)</label>
                             <input type="text" name="exam[{{$relation_count}}][percentile]" id="percentile" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </div>
                     </div>
-                    <div class="col-md-3 cat_{{$item}} {{$display}} disp">
+                    <div class="col-md-3 col-lg cat_{{$item}} {{$display}} disp">
                         <div class="mb-3">
                             <label for="" class="form-label">Score Card</label>
                             <input type="file"  id="score_card_file" class="form-control" onchange="getScorefile(this,'#card_file_{{$item}}','#sop_card{{$item}}')">
                             <input type="hidden" id="card_file_{{$item}}" name="exam[{{$relation_count}}][score_card]">
                         </div>
                     </div>
-                    <div class="col-md-1 cat_{{$item}} {{$display}} my-auto disp" id="sop_card{{$item}}">
+                    {{-- <div class="col-md-1 cat_{{$item}} {{$display}} my-auto disp" id="sop_card{{$item}}">
                        
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

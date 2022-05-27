@@ -78,7 +78,6 @@
             <div class="card-body">
                <div class="d-flex align-items-center">
                   <div>
-                     <p class="mb-0 text-secondary">Total Number of students</p>
                      <h4 class="my-1 text-blue">@{{total_student}}</h4>
                   </div>
                   <div class="widgets-icons-2 rounded-circle blue text-white ms-auto"><i class="bx bxs-group"></i>
@@ -99,7 +98,6 @@
             <div class="card-body">
                <div class="d-flex align-items-center">
                   <div>
-                     <p class="mb-0 text-secondary">Total Number of CATKing students</p>
                      <h4 class="my-1 text-orange">@{{catking.total_catking_student}}</h4>
                   </div>
                   <div class="widgets-icons-2 rounded-circle orange text-white ms-auto"><i class="bx bxs-bar-chart-alt-2"></i>
@@ -120,38 +118,9 @@
             <div class="card-body">
                <div class="d-flex align-items-center">
                   <div>
-                     <p class="mb-0 text-secondary">Total Number of Non-CATKing students</p>
                      <h4 class="my-1 text-gray">@{{catking.total_non_catking_student}}</h4>
                   </div>
                   <div class="widgets-icons-2 rounded-circle gray text-white ms-auto"><i class="bx bxs-user"></i>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <div class="col">
-         <div class="card radius-10 border-start border-0 border-3 border-blue">
-            <div class="card-header bg-transparent">
-               <div class="row">
-                  <div class="col-md-4">
-                     <h6 class="mb-0">Interview Taken</h6>
-                  </div>
-                  <div class="col-md-6">
-                     <input  type="text" class="form-control" name="daterange" id="interview-range">
-                  </div>
-                  <div class="col-md-2">
-                     <button @click.prevent="fetchInterview()" class="btn btn-sm btn-primary" id="interview-btn">Go</button>
-                  </div>
-               </div>
-            </div>
-            <div class="card-body">
-               <div class="d-flex align-items-center">
-                  <div>
-                     <p class="mb-0 text-secondary">Total Number of Interview Taken</p>
-                     <h4 class="my-1 text-blue">@{{interview}}</h4>
-                  </div>
-                  <div class="widgets-icons-2 rounded-circle blue text-white ms-auto"><i class="bx bx-user-pin"></i>
                   </div>
                </div>
             </div>
@@ -175,7 +144,6 @@
             <div class="card-body">
                <div class="d-flex align-items-center">
                   <div>
-                     <p class="mb-0 text-secondary">Total Number of Profile Reviewed</p>
                      <h4 class="my-1 text-orange">@{{profile_review}}</h4>
                   </div>
                   <div class="widgets-icons-2 rounded-circle orange text-white ms-auto"><i class="bx bx-message-rounded-check"></i>
@@ -183,7 +151,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div>      
       <div class="col">
          <div class="card radius-10 border-start border-0 border-3 border-gray">
             <div class="card-header bg-transparent">
@@ -202,7 +170,6 @@
             <div class="card-body">
                <div class="d-flex align-items-center">
                   <div>
-                     <p class="mb-0 text-secondary">Total SOP Submitted</p>
                      <h4 class="my-1 text-gray">@{{total_sop_submit}}</h4>
                   </div>
                   <div class="widgets-icons-2 rounded-circle gray text-white ms-auto"><i class="bx bx-copy-alt"></i>
@@ -229,7 +196,6 @@
             <div class="card-body">
                <div class="d-flex align-items-center">
                   <div>
-                     <p class="mb-0 text-secondary">Total SOP Reviewed</p>
                      <h4 class="my-1 text-blue">@{{total_sop_review}}</h4>
                   </div>
                   <div class="widgets-icons-2 rounded-circle blue text-white ms-auto"><i class="bx bx-message-rounded-check"></i>
@@ -256,7 +222,6 @@
             <div class="card-body">
                <div class="d-flex align-items-center">
                   <div>
-                     <p class="mb-0 text-secondary">Total Interview Call Getters</p>
                      <h4 class="my-1 text-orange">@{{total_call_get}}</h4>
                   </div>
                   <div class="widgets-icons-2 rounded-circle orange text-white ms-auto"><i class="bx bx-phone-call"></i>
@@ -265,7 +230,32 @@
             </div>
          </div>
       </div>
-      
+      <div class="col">
+         <div class="card radius-10 border-start border-0 border-3 border-blue">
+            <div class="card-header bg-transparent">
+               <div class="row">
+                  <div class="col-md-4">
+                     <h6 class="mb-0">Interview Taken</h6>
+                  </div>
+                  <div class="col-md-6">
+                     <input  type="text" class="form-control" name="daterange" id="interview-range">
+                  </div>
+                  <div class="col-md-2">
+                     <button @click.prevent="fetchInterview()" class="btn btn-sm btn-primary" id="interview-btn">Go</button>
+                  </div>
+               </div>
+            </div>
+            <div class="card-body">
+               <div class="d-flex align-items-center">
+                  <div>
+                     <h4 class="my-1 text-blue">@{{interview}}</h4>
+                  </div>
+                  <div class="widgets-icons-2 rounded-circle blue text-white ms-auto"><i class="bx bx-user-pin"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
       
    </div>
    <!--end row-->
