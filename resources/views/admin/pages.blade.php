@@ -44,8 +44,9 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-lg-11 mx-auto">
-					<div class="row">
+				<div class="row">
+				<div class="col-lg-12 mx-auto">
+					
 						<table class="table b-table table-striped table-bordered">
 							<thead class="table-dark">
 								<tr>

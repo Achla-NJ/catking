@@ -23,7 +23,7 @@
                <a href="{{route('admin.dashboard')}}"><i class="bx bx-home-alt"></i></a>
             @endif
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Edit</li>
+            <li class="breadcrumb-item active" aria-current="page">Interview</li>
          </ol>
       </nav>
    </div>
@@ -102,7 +102,7 @@
                                              <div class="col-md-6">
                                                 <div class="mb-3">
                                                    <label for=""
-                                                      class="form-label">Select Date <span style="color:red;">*</label></label>
+                                                      class="form-label">Select Date <span style="color:red;">*</span></label></label>
                                                    <input type="date" name="interview[{{$interview_key}}][interview_date]" value="{{$interview_date}}" class="form-control">
                                                 </div>
                                              </div>
@@ -190,7 +190,7 @@
                                              </div>
                                              <div class="col-md-5">
                                                 <div class="mb-3">
-                                                   <label for="" class="form-label">Add Document <span style="color:red;">*</label>
+                                                   <label for="" class="form-label">Add Document <span style="color:red;">*</span></label>
                                                    <input type="file" onchange="getCallfile(this,'#call_file_{{$converted_key}}')" class="form-control">
                                                    <input type="hidden" name="converted_call[{{$converted_key}}][call_file]" id="call_file_{{$converted_key}}" value="{{$call_file}}">
 

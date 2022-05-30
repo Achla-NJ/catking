@@ -42,12 +42,12 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 		<!--sidebar wrapper -->
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header bg-body">
+				{{-- <div>
+					<img src="{{asset('assets/images/catking.png')}}" class="logo-icon" alt="logo icon">
+				</div> --}}
 				<div>
-					<img src="{{asset('assets/images/cat-icon.png')}}" class="logo-icon" alt="logo icon">
-				</div>
-				<div>
-					<h4 class="logo-text">
-						<img src="{{asset('assets/images/cat-text.png')}}" alt="CatKing">	
+					<h4 class="logo-text" style="margin-bottom: 5px;">
+						<img src="{{asset('assets/images/catking.png')}}" alt="CatKing" style="height: 50px;">	
 					</h4>
 				</div>
 				<div class="toggle-icon ms-auto text-body"><i class='bx bx-arrow-to-left'></i>
@@ -121,8 +121,10 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<div class="menu-title">Review</div>
 						</a>
 						<ul>
-							<li> <a href="{{route('admin.attributes')}}"><i class="bx bx-right-arrow-alt"></i>Add Attributes</a>
-							</li>
+							@if (Auth::user()->role =='admin' )
+								<li> <a href="{{route('admin.attributes')}}"><i class="bx bx-right-arrow-alt"></i>Add Attributes</a>
+								</li>
+							@endif
 							<li> <a href="{{route('admin.personal-interviews')}}"><i class="bx bx-right-arrow-alt"></i>Personal Interviews Review</a>
 							</li>
 							<li> <a href="{{route('admin.profile-review')}}"><i class="bx bx-right-arrow-alt"></i>Profile Review</a>
@@ -303,7 +305,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<img src="{{ Auth::user()->avatar }}" class="user-img" alt="user avatar">                    
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end">
-							@if (Auth::user()->role !='teacher' )
+							@if (Auth::user()->role =='student' )
 								<li><a class="dropdown-item" href="{{route('profile.account')}}"><i class="bx bx-user"></i><span>Profile</span></a>
 								</li>
 							@endif
@@ -312,9 +314,45 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							@else
 								<li><a class="dropdown-item" href="{{route('profile.change-password')}}"><i class="bx bx-user"></i><span>Change Password</span></a></li>
 							@endif
-							
-							
+							<div class="dropdown-divider mb-0"></div>
 							<li>
+								<a class="dropdown-item" href="mailto:support@catking.in">
+									<i class='bx bx-mail-send'></i>
+									<span>Mail</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="tel:+918999118999">
+									<i class='bx bx-phone-call'></i>
+									<span>Phone</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="https://catking.in/" target="blank">
+									<i class='bx bx-link-external'></i>
+									<span>Webiste</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="https://learn.catking.in" target="blank">
+									<i class="bx bx-home-circle"></i>
+									<span>Student Dashboard</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="https://www.youtube.com/c/RahulCatking" target="blank">
+									<i class="lni lni-youtube"></i>
+									<span>YouTube</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="https://www.instagram.com/catkingeducare/?hl=en" target="blank">
+									<i class="lni lni-instagram"></i>
+									<span>Instagram</span>
+								</a>
+							</li>
+
+
 								<div class="dropdown-divider mb-0"></div>
 							</li>
 							<li><a class="dropdown-item" href="{{route('signout')}}"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
@@ -374,8 +412,8 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 			<div class="container-fluid">
 				<div class="row align-items-center">
 					<div class="col">
-						<div class="h6 text-start mb-0">Follow Us</div>
-						<div class="d-flex aling-items-center">
+						<div class="d-flex aling-items-center align-items-center">
+							<div class="h6 text-start mb-0 me-2">Follow Us</div>
 							<a href="https://www.youtube.com/c/RahulCatking" class="d-inline-flex font-30 text-body me-2">
 								<i class="lni lni-youtube"></i>
 							</a>
@@ -388,8 +426,8 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 						<p class="mb-0">Copyright © 2022. All right reserved.
 						</p>
 					</div>
-					<div class="col">
-						<img src="{{asset('assets/images/kpmgok.png')}}" class="img-fluid"/>
+					<div class="col text-center text-lg-end">
+						<img src="{{asset('assets/images/kpmgok.png')}}" class="img-fluid" style="max-height: 40px"/>
 					</div>
 				</div>
 			</div>

@@ -75,7 +75,7 @@
                                     <div class="col-md-2 disp">
                                        <div class="mb-3">
                                           @if ($exam_type == 'other')
-                                             <label for="" class="form-label">Exam Name</label>
+                                             <label for="" class="form-label">Exam Name <span style="color:red;">*</span></label>
                                              <input type="hidden" value="other" name="exam[{{$exam_key}}][exam_type]">
                                              <input type="text"  name="exam[{{$exam_key}}][name]" value="{{$name}}" data-set="{{$exam_type}}" class="form-control"  >
                                           @else
@@ -98,19 +98,19 @@
                                     @endphp
                                     <div class="col-md-2 cat_{{$exam_key}} {{$display}} disp">
                                        <div class="mb-3">
-                                          <label for="" class="form-label">Scores</label>
+                                          <label for="" class="form-label">Scores <span style="color:red;">*</span></label>
                                           <input type="text" name="exam[{{$exam_key}}][score]" id="score" class="form-control"value="{{$score}}">
                                        </div>
                                     </div>
                                     <div class="col-md-2 col-lg-auto cat_{{$exam_key}} {{$display}} disp">
                                        <div class="mb-3">
-                                          <label for="" class="form-label">Percentile (if available)</label>
+                                          <label for="" class="form-label">Percentile (if available) </label>
                                           <input type="text" name="exam[{{$exam_key}}][percentile]" id="percentile" class="form-control percentile" value="{{$percentile}}">
                                        </div>
                                     </div>
                                     <div class="col-md-3  col-lg cat_{{$exam_key}} {{$display}} disp">
                                        <div class="mb-3">
-                                          <label for="" class="form-label">Score Card</label>
+                                          <label for="" class="form-label">Score Card <span style="color:red;">*</span></label>
                                           <input type="file"  id="score_card_file" class="form-control" onchange="getScorefile(this,'#card_file_{{$exam_key}}')">
                                           <input type="hidden" id="card_file_{{$exam_key}}" name="exam[{{$exam_key}}][score_card]" value="{{$score_card}}">
                                        </div>

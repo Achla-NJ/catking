@@ -4,6 +4,7 @@
 @section('css_plugin')
 <link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
 <link href="{{asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
+<link href="{{asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
 @endsection
 
 @section('page_css')
@@ -70,7 +71,7 @@
 
 @section('main_content')
 <div class="row profile">
-	<div class="col">
+	<div class="col pb-5">
 		<div class="card">
 			<div class="card-body ">
 				<div class="row">
@@ -87,13 +88,13 @@
 				<div class="row">
 					<div class="col-lg-12 mx-auto">
 						<div class="table-responsive">
-							<table class="table b-table table-striped table-bordered ">
+							<table class="table b-table table-striped table-bordered " id="example">
 								<thead class="table-dark">
 									<tr>
 										<th>Sr No.</th>
 										<th>Name</th>
 										<th>SOP Accepted</th>
-										<th>Colleges accepting SOPs </th>
+										<th>Number of SOPs uploaded </th>
 										<th>Status(Active/Inactive)</th>
 										<th>Action</th>
 									</tr>
@@ -296,5 +297,12 @@
 		});
 	}
 
+</script>
+<script src="{{asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>t>
+<script>
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
 </script>
 @endsection

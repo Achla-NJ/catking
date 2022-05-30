@@ -59,18 +59,18 @@
 @endsection
 @section('main_content')
 <div class="page-content" id="app">
-   <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
-      <div class="col">
+   <div class="row ">
+      <div class="col-md-3">
          <div class="card radius-10 border-start border-0 border-3 border-blue">
             <div class="card-header bg-transparent">
                <div class="row">
-                  <div class="col-md-4">
+                  <div class="col">
                      <h6 class="mb-0">Total Students</h6>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col">
                      <input  type="text" class="form-control" name="daterange" id="present-student-date">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-auto">
                      <button @click.prevent="getPresentStudent()" class="btn btn-sm btn-primary" id="student-btn">Go</button>
                   </div>
                </div>
@@ -86,7 +86,7 @@
             </div>
          </div>
       </div>
-      <div class="col">
+      <div class="col-md-3">
          <div class="card radius-10 border-start border-0 border-3 border-orange">
             <div class="card-header bg-transparent">
                <div class="row">
@@ -106,7 +106,7 @@
             </div>
          </div>
       </div>
-      <div class="col">
+      <div class="col-md-3">
          <div class="card radius-10 border-start border-0 border-3 border-gray">
             <div class="card-header bg-transparent">
                <div class="row">
@@ -126,17 +126,17 @@
             </div>
          </div>
       </div>
-      <div class="col">
+      <div class="col-md-3">
          <div class="card radius-10 border-start border-0 border-3 border-orange">
             <div class="card-header bg-transparent">
                <div class="row">
-                  <div class="col-md-4">
+                  <div class="col">
                      <h6 class="mb-0">Profile Reviewed</h6>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col">
                      <input  type="text" class="form-control" name="daterange" id="profile-review-range">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-auto">
                      <button @click.prevent="fetchProfileReview()" class="btn btn-sm btn-primary" id="profile-review-btn">Go</button>
                   </div>
                </div>
@@ -152,17 +152,17 @@
             </div>
          </div>
       </div>      
-      <div class="col">
+      <div class="col-md-3">
          <div class="card radius-10 border-start border-0 border-3 border-gray">
             <div class="card-header bg-transparent">
                <div class="row">
-                  <div class="col-md-4">
+                  <div class="col">
                      <h6 class="mb-0">SOP submitted</h6>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col">
                      <input  type="text" class="form-control" name="daterange" id="sop-submit-range">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-auto">
                      <button @click.prevent="fetchSopSubmit()" class="btn btn-sm btn-primary" id="sop-submit-btn">Go</button>
                   </div>
                </div>
@@ -178,17 +178,17 @@
             </div>
          </div>
       </div>
-      <div class="col">
+      <div class="col-md-3">
          <div class="card radius-10 border-start border-0 border-3 border-blue">
             <div class="card-header bg-transparent">
                <div class="row">
-                  <div class="col-md-4">
+                  <div class="col">
                      <h6 class="mb-0">SOP Reviewed</h6>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col">
                      <input  type="text" class="form-control" name="daterange" id="sop-review-range">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-auto">
                      <button @click.prevent="fetchSopReview()" class="btn btn-sm btn-primary" id="sop-review-btn">Go</button>
                   </div>
                </div>
@@ -204,17 +204,17 @@
             </div>
          </div>
       </div>
-      <div class="col">
+      <div class="col-md-3">
          <div class="card radius-10 border-start border-0 border-3 border-orange">
             <div class="card-header bg-transparent">
                <div class="row">
-                  <div class="col-md-4">
+                  <div class="col">
                      <h6 class="mb-0">Interview Call Getters</h6>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col">
                      <input  type="text" class="form-control" name="daterange" id="call-get-range">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-auto">
                      <button @click.prevent="fetchCallGet()" class="btn btn-sm btn-primary" id="call-get-btn">Go</button>
                   </div>
                </div>
@@ -230,17 +230,17 @@
             </div>
          </div>
       </div>
-      <div class="col">
+      <div class="col-md-3">
          <div class="card radius-10 border-start border-0 border-3 border-blue">
             <div class="card-header bg-transparent">
                <div class="row">
-                  <div class="col-md-4">
+                  <div class="col">
                      <h6 class="mb-0">Interview Taken</h6>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col">
                      <input  type="text" class="form-control" name="daterange" id="interview-range">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-auto">
                      <button @click.prevent="fetchInterview()" class="btn btn-sm btn-primary" id="interview-btn">Go</button>
                   </div>
                </div>
@@ -258,9 +258,67 @@
       </div>
       
    </div>
-   <!--end row-->
-   <div class="row mb-4 gy-3 gy-lg-0">
-      <div class="col-12 col-lg-4">
+
+   <div class="row">
+      <div class="col-md-12">
+         <div class="card-header bg-transparent px-0">
+            <div class="d-block align-items-center">
+               <div class="row gy-3 gy-lg-0">
+                  <div class="col">
+                     <h6 class="mb-0">Actual vs Target profile registration achieved</h6>
+                  </div>
+                  <div class="col-auto">
+                     <a data-bs-toggle="modal" data-bs-target="#exampleModal" role="button" class="btn-sm btn-primary"><i class="fa fa-edit"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div style="min-height: 38px" class="my-3 d-block"></div>
+         <div class="card radius-10 ">
+            <div class="card-body">
+               
+               <div class="chart-container-1">
+                  <registration-chart :actual-data="Object.values(actual_data)" :target-data="Object.values(target_data)" :chart-label="Object.keys(target_data)" chart-id="registration-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
+              
+               </div>
+            </div>
+          
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-6">
+         <div class="card-header bg-transparent mb-3 px-0">
+            <div class="row gy-3">
+               <div class="col-12">
+                  <h6 class="mb-0">Growth of  Total No. Of Students - CATKing and Non-CATKing</h6>
+               </div>
+            </div>
+         </div>
+         <div class="row align-items-center mb-3">
+            <div class="col-md-5">
+               Select Year:
+            </div>
+            <div class="col-md-6 ms-auto">
+               <select class="form-control" @change.prevent="fetchCatkingGrowth" id="catking-growth-year" name="year-range">
+               @for ($i = date('Y'); $i >= 1990; $i--)
+               <option value="{{$i}}" {{ $i==date('Y') ? "selected":''}}>{{$i}}</option>
+               @endfor
+               </select>
+            </div>
+         </div>
+         <div class="card radius-10 ">
+            <div class="card-body">
+               <div class="chart-container-1">
+                  <catking-growth-chart :catking-growth-label="Object.keys(catking_growth)" :non-catking-growth-data="Object.values(non_catking_growth)" :catking-growth-data="Object.values(catking_growth)" :total-growth-data="Object.values(total_growth)"   chart-id="catking-growth-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
          <div class="card-header bg-transparent mb-3 px-0">
             <div class="row gy-3">
                <div class="col-12">
@@ -290,9 +348,87 @@
             </div>
          </div>
       </div>
+      
+   </div>
+
+   <div class="row">
+      <div class="col-md-6">
+         <div class="card-header bg-transparent px-0">
+            <div class="row ">
+               <div class="col">
+                  <h6 class="mb-0">Students appearing for different exams</h6>
+               </div>
+            </div>
+         </div>
+         <div class="row my-3 gy-3 gy-md-0">
+            <div class="col ms-auto">
+               <select name="exam" id="exams" class="form-control multiple-select" multiple >
+                  
+                  @php $exams = \App\Models\Exam::all(); @endphp
+                  @foreach ($exams as $key => $item)
+                     <option value="{{$item->name}}">{{$item->name}}</option>
+                  @endforeach
+               </select>
+            </div>
+            <div class="col">
+               <input  type="text" class="form-control" id="exam-range" name="daterange">
+            </div>
+            <div class="col-auto">
+               <button  class="btn btn-primary btn-sm " @click.prevent="fetchExams" id="exam-btn">Go</button>
+            </div>
+         </div>
+         <div class="card w-100 radius-10">
+            <div class="card-body">
+               <div class="chart-container-1">
+                  <exam-chart  :exam-labels="Object.keys(exams)" :exam-data="Object.values(exams)"  chart-id="exam-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
+               </div>
+               
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="card-header bg-transparent px-0">
+            <div class="d-flex align-items-center">
+               <div class="row gy-3">
+                  <div class="col">
+                     <h6 class="mb-0">Students with @{{score_exam2}} percentile</h6>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row my-3 gy-3 gy-md-0">
+            <div class="col-md-3">
+               <select class="form-control" id="exam_type2" >
+                  @php $exams = \App\Models\Exam::all(); @endphp
+                  @foreach ($exams as $key => $item)
+                     <option value="{{$item->name}}">{{$item->name}}</option>
+                  @endforeach
+               </select>
+            </div>
+            <div class="col">
+               <input  type="text" class="form-control" name="daterange" id="score-range2">
+            </div>
+            <div class="col-auto">
+               <button  class="btn btn-primary btn-sm " @click.prevent="fetchScore2">Go</button>
+            </div>
+         </div>
+         
+         <div class="card radius-10 ">
+            <div class="card-body">
+               <div class="chart-container-1">
+                  <score-chart2  :score-label="score_label2" :score-data="score_data2" :score-exam="score_exam2.toUpperCase()" chart-id="score-chart2" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
+               </div>
+            </div>
+            <!--end row-->
+         </div>
+      </div>
+   </div>
+   <!--end row-->
+   <div class="row mb-4 gy-3 gy-lg-0">
+      
 
       
-      {{-- <div class="col-12 col-lg-4">
+      {{-- <div class="col-12 col-md-4">
          <div class="card-header bg-transparent px-0">
             <div class="row">
                <div class="col">
@@ -322,37 +458,9 @@
       </div> --}}
       
 
-      <div class="col-12 col-lg-4">
-         <div class="card-header bg-transparent mb-3 px-0">
-            <div class="row gy-3">
-               <div class="col-12">
-                  <h6 class="mb-0">Growth of  Total No. Of Students - CATKing and Non-CATKing</h6>
-               </div>
-            </div>
-         </div>
-         <div class="row align-items-center mb-3">
-            <div class="col-md-5">
-               Select Year:
-            </div>
-            <div class="col-md-6 ms-auto">
-               <select class="form-control" @change.prevent="fetchCatkingGrowth" id="catking-growth-year" name="year-range">
-               @for ($i = date('Y'); $i >= 1990; $i--)
-               <option value="{{$i}}" {{ $i==date('Y') ? "selected":''}}>{{$i}}</option>
-               @endfor
-               </select>
-            </div>
-         </div>
-         <div class="card radius-10 ">
-            <div class="card-body">
-               <div class="chart-container-1">
-                  <catking-growth-chart :catking-growth-label="Object.keys(catking_growth)" :non-catking-growth-data="Object.values(non_catking_growth)" :catking-growth-data="Object.values(catking_growth)" :total-growth-data="Object.values(total_growth)"   chart-id="catking-growth-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
+      
 
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <div class="col-md-4">
+      <div class="col-md-6">
          <div class="card-header bg-transparent px-0">
             <div class="d-flex align-items-center">
                <div class="row gy-3">
@@ -362,7 +470,7 @@
                </div>
             </div>
          </div>
-         <div class="row my-3">
+         <div class="row my-3 gy-3 gy-md-0">
             <div class="col-md-2">
                <select class="form-control" id="exam_type" >
                   @php $exams = \App\Models\Exam::all(); @endphp
@@ -417,8 +525,117 @@
       
    </div>
    <!--end row-->
-   <div class="row row-cols-1 row-cols-lg-3 mb-4 gy-3 gy-lg-0">
-      <div class="col-12 col-lg-4">
+
+   <div class="row">
+      <div class="col-md-6 ">
+         <div class="card-header bg-transparent px-0">
+            <div class="row">
+               <div class="col">
+                  <h6 class="mb-0">Received And Converted Calls</h6>
+               </div>
+            </div>
+         </div>
+         <div class="row my-3 gy-3 gy-md-0">
+            <div class="col ms-auto">
+               <select name="call-college" id="call-college" multiple class="form-select multiple-select" >
+                  
+                  @php $college = \App\Models\College::where('created_by_user','no')->get(); @endphp
+                  @foreach ($college as $key => $item)
+                     <option value="{{$item->id}}">{{$item->name}}</option>
+                  @endforeach
+               </select>
+            </div>
+            <div class="col">
+               <input  type="text" class="form-control" name="daterange" id="call-range">
+            </div>
+            <div class="col-auto">
+               <button @click.prevent="fetchCall()" class="btn btn-sm btn-primary">Go</button>
+            </div>
+         </div>
+
+         <div class="card radius-10 ">
+            <div class="card-body">
+               <div class="chart-container-1">
+                  <call-chart  :call-labels="call_labels" :call-received="call_received" :call-converted="call_converted" :call-dream="call_dream"  chart-id="call-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
+               </div>
+            </div>
+            <div class="row row-group border-top g-0">
+               <div class="col">
+                  <div class="p-3 text-center">
+                     <h4 class="mb-0 text-blue">@{{calls.converted}}</h4>
+                     <p class="mb-0">Converted</p>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="p-3 text-center">
+                     <h4 class="mb-0 text-orange">@{{calls.received}}</h4>
+                     <p class="mb-0">Recieved</p>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="p-3 text-center">
+                     <h4 class="mb-0 text-gray">@{{calls.dream}}</h4>
+                     <p class="mb-0">Dream College</p>
+                  </div>
+               </div>
+            </div>
+            <!--end row-->
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="card-header bg-transparent px-0">
+            <div class="row">
+               <div class="col">
+                  <h6 class="mb-0">Uploaded And Reviewed Sops</h6>
+               </div>
+            </div>
+         </div>
+         <div class="row my-3 gy-3 gy-md-0">
+            <div class="col ms-auto">
+               <select name="sop-college" id="sop-college" multiple class="form-select multiple-select" >
+                  
+                  @php $college = \App\Models\College::where('created_by_user','no')->get(); @endphp
+                  @foreach ($college as $key => $item)
+                     <option value="{{$item->id}}">{{$item->name}}</option>
+                  @endforeach
+               </select>
+            </div>
+            <div class="col">
+               <input  type="text" class="form-control" name="daterange" id="sop-range">
+            </div>
+            <div class="col-auto">
+               <button @click.prevent="fetchSop()" class="btn btn-sm btn-primary">Go</button>
+            </div>
+         </div>
+
+        
+         <div class="card radius-10 ">
+            <div class="card-body">
+               <div class="chart-container-1">
+                  <sop-chart  :sop-data="Object.values(interview_percent)" :sop-labels="sop_labels" :sop-uploads="sop_uploads" :sop-reviews="sop_reviews" chart-id="sop-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
+               </div>
+            </div>
+            <div class="row row-group border-top g-0">
+               <div class="col">
+                  <div class="p-3 text-center">
+                     <h4 class="mb-0 text-blue">@{{sops.upload}}</h4>
+                     <p class="mb-0">Upload</p>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="p-3 text-center">
+                     <h4 class="mb-0 text-orange">@{{sops.review}}</h4>
+                     <p class="mb-0">Reviewed</p>
+                  </div>
+               </div>
+            </div>
+            <!--end row-->
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-6">
          <div class="card-header bg-transparent px-0">
             <div class="d-flex align-items-center">
                <div class="row gy-3">
@@ -428,8 +645,8 @@
                </div>
             </div>
          </div>
-         <div class="row my-3">
-            <div class="col-md-4">
+         <div class="row my-3 gy-3 gy-md-0">
+            <div class="col-md-4 col-sm-6">
                <select class="form-control" id="state">
                   <option value="">-Select State-</option>
                   {{$states = App\Models\State::all()}}
@@ -460,7 +677,72 @@
             </ul>
          </div>
       </div>
-      <div class="col-md-3 col-lg-5 col-xl-4">
+      <div class="col-md-6">
+         <div class="card-header bg-transparent px-0">
+            <div class="row">
+               <div class="col">
+                  <h6 class="mb-0">Top 5 states</h6>
+               </div>
+            </div>
+         </div>
+         <div class="row my-3">
+            <div class="col">
+               <input  type="text" class="form-control" name="daterange" id="top-state-range">
+            </div>
+            <div class="col-auto">
+               <button @click.prevent="fetchTopState()" class="btn btn-sm btn-primary">Go</button>
+            </div>
+         </div>
+
+        
+         <div class="card radius-10 ">
+            <div class="card-body">
+               <table class="table table-striped table-bordered">
+                  <thead>
+                     <tr>
+                        <th>State</th>
+                        <th>CATKing Students</th>
+                        <th>Non CATKing Students</th>
+                        <th>Total Students</th>
+                     </tr>
+                  </thead>
+                  <tbody id="top_state">
+                  </tbody>
+
+               </table>
+            </div>
+            <!--end row-->
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      
+      <div class="col-md-6 ">
+         <div class="card-header bg-transparent px-0">
+            <div class="row">
+               <div class="col">
+                  <h6 class="mb-0">Students based on degrees</h6>
+               </div>
+            </div>
+         </div>
+         <div class="row my-3">
+            <div class="col">
+               <input  type="text" class="form-control" name="daterange" id="degree-range">
+            </div>
+            <div class="col-auto">
+               <button  class="btn btn-primary btn-sm " @click.prevent="fetchStudentDegree" id="degree-btn">Go</button>
+            </div>
+         </div>
+         <div class="card w-100 radius-10">
+            <div class="card-body">
+               <div class="chart-container-1">
+                  <degree-chart  :degree-labels="Object.keys(student_degree)" :degree-data="Object.values(student_degree)"  chart-id="degree-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
+               </div>
+               
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
          <div class="card-header bg-transparent px-0">
             <div class="row">
                <div class="col">
@@ -515,8 +797,13 @@
             </div>
          </div>
       </div>
+   </div>
+
       
-      {{-- <div class="col-lg-4">
+      
+      
+      
+      {{-- <div class="col-md-4">
          <div class="card-header bg-transparent px-0">
             <div class="d-flex align-items-center">
                <div class="row gy-3">
@@ -548,283 +835,24 @@
             </ul>
          </div>
       </div> --}}
-      <div class="col-lg-4">
-         <div class="card-header bg-transparent px-0">
-            <div class="d-block align-items-center">
-               <div class="row gy-3 gy-lg-0">
-                  <div class="col">
-                     <h6 class="mb-0">Actual vs Target profile registration achieved</h6>
-                  </div>
-                  <div class="col-auto">
-                     <a data-bs-toggle="modal" data-bs-target="#exampleModal" role="button" class="btn-sm btn-primary"><i class="fa fa-edit"></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div style="min-height: 38px" class="my-3 d-block"></div>
-         <div class="card radius-10 ">
-            <div class="card-body">
-               
-               <div class="chart-container-1">
-                  <registration-chart :actual-data="Object.values(actual_data)" :target-data="Object.values(target_data)" :chart-label="Object.keys(target_data)" chart-id="registration-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
-              
-               </div>
-            </div>
-          
-         </div>
-      </div>
+      
       
 
-      
-   </div>
    <!--end row-->
-   <div class="row mb-4 gy-3 gy-lg-0">
-      <div class="col-md-3 col-lg-5 col-xl-4">
-         <div class="card-header bg-transparent px-0">
-            <div class="row">
-               <div class="col">
-                  <h6 class="mb-0">Students appearing for different exams</h6>
-               </div>
-            </div>
-         </div>
-         <div class="row my-3">
-            <div class="col-md-4 ms-auto">
-               <select name="exam" id="exams" class="form-control multiple-select" multiple >
-                  
-                  @php $exams = \App\Models\Exam::all(); @endphp
-                  @foreach ($exams as $key => $item)
-                     <option value="{{$item->name}}">{{$item->name}}</option>
-                  @endforeach
-               </select>
-            </div>
-            <div class="col">
-               <input  type="text" class="form-control" id="exam-range" name="daterange">
-            </div>
-            <div class="col-auto">
-               <button  class="btn btn-primary btn-sm " @click.prevent="fetchExams" id="exam-btn">Go</button>
-            </div>
-         </div>
-         <div class="card w-100 radius-10">
-            <div class="card-body">
-               <div class="chart-container-1">
-                  <exam-chart  :exam-labels="Object.keys(exams)" :exam-data="Object.values(exams)"  chart-id="exam-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
-               </div>
-               
-            </div>
-         </div>
-      </div>
+   
       
-      <div class="col-md-3 col-lg-5 col-xl-4 ">
-         <div class="card-header bg-transparent px-0">
-            <div class="row">
-               <div class="col">
-                  <h6 class="mb-0">Students based on degrees</h6>
-               </div>
-            </div>
-         </div>
-         <div class="row my-3">
-            <div class="col">
-               <input  type="text" class="form-control" name="daterange" id="degree-range">
-            </div>
-            <div class="col-auto">
-               <button  class="btn btn-primary btn-sm " @click.prevent="fetchStudentDegree" id="degree-btn">Go</button>
-            </div>
-         </div>
-         <div class="card w-100 radius-10">
-            <div class="card-body">
-               <div class="chart-container-1">
-                  <degree-chart  :degree-labels="Object.keys(student_degree)" :degree-data="Object.values(student_degree)"  chart-id="degree-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
-               </div>
-               
-            </div>
-         </div>
-      </div>
+      
+      
 
 
      
 
-      <div class="col-12 col-lg-4">
-         <div class="card-header bg-transparent px-0">
-            <div class="d-flex align-items-center">
-               <div class="row gy-3">
-                  <div class="col-md-12">
-                     <h6 class="mb-0">Students with @{{score_exam2}} percentile</h6>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="row my-3">
-            <div class="col-md-3">
-               <select class="form-control" id="exam_type2" >
-                  @php $exams = \App\Models\Exam::all(); @endphp
-                  @foreach ($exams as $key => $item)
-                     <option value="{{$item->name}}">{{$item->name}}</option>
-                  @endforeach
-               </select>
-            </div>
-            <div class="col">
-               <input  type="text" class="form-control" name="daterange" id="score-range2">
-            </div>
-            <div class="col-auto">
-               <button  class="btn btn-primary btn-sm " @click.prevent="fetchScore2">Go</button>
-            </div>
-         </div>
-         
-         <div class="card radius-10 ">
-            <div class="card-body">
-               <div class="chart-container-1">
-                  <score-chart2  :score-label="score_label2" :score-data="score_data2" :score-exam="score_exam2.toUpperCase()" chart-id="score-chart2" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
-               </div>
-            </div>
-            <!--end row-->
-         </div>
-      </div>
-      <div class="col-md-3 col-lg-5  col-xl-4 ">
-         <div class="card-header bg-transparent px-0">
-            <div class="row">
-               <div class="col">
-                  <h6 class="mb-0">Received And Converted Calls</h6>
-               </div>
-            </div>
-         </div>
-         <div class="row my-3">
-            <div class="col-md-4 ms-auto">
-               <select name="call-college" id="call-college" multiple class="form-select multiple-select" >
-                  
-                  @php $college = \App\Models\College::where('created_by_user','no')->get(); @endphp
-                  @foreach ($college as $key => $item)
-                     <option value="{{$item->id}}">{{$item->name}}</option>
-                  @endforeach
-               </select>
-            </div>
-            <div class="col">
-               <input  type="text" class="form-control" name="daterange" id="call-range">
-            </div>
-            <div class="col-auto">
-               <button @click.prevent="fetchCall()" class="btn btn-sm btn-primary">Go</button>
-            </div>
-         </div>
+      
+      
 
-         <div class="card radius-10 ">
-            <div class="card-body">
-               <div class="chart-container-1">
-                  <call-chart  :call-labels="call_labels" :call-received="call_received" :call-converted="call_converted" :call-dream="call_dream"  chart-id="call-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
-               </div>
-            </div>
-            <div class="row row-group border-top g-0">
-               <div class="col">
-                  <div class="p-3 text-center">
-                     <h4 class="mb-0 text-blue">@{{calls.converted}}</h4>
-                     <p class="mb-0">Converted</p>
-                  </div>
-               </div>
-               <div class="col">
-                  <div class="p-3 text-center">
-                     <h4 class="mb-0 text-orange">@{{calls.received}}</h4>
-                     <p class="mb-0">Recieved</p>
-                  </div>
-               </div>
-               <div class="col">
-                  <div class="p-3 text-center">
-                     <h4 class="mb-0 text-gray">@{{calls.dream}}</h4>
-                     <p class="mb-0">Dream College</p>
-                  </div>
-               </div>
-            </div>
-            <!--end row-->
-         </div>
-      </div>
-      <div class="col-md-3 col-lg-5  col-xl-4">
-         <div class="card-header bg-transparent px-0">
-            <div class="row">
-               <div class="col">
-                  <h6 class="mb-0">Uploaded And Reviewed Sops</h6>
-               </div>
-            </div>
-         </div>
-         <div class="row my-3">
-            <div class="col-md-4 ms-auto">
-               <select name="sop-college" id="sop-college" multiple class="form-select multiple-select" >
-                  
-                  @php $college = \App\Models\College::where('created_by_user','no')->get(); @endphp
-                  @foreach ($college as $key => $item)
-                     <option value="{{$item->id}}">{{$item->name}}</option>
-                  @endforeach
-               </select>
-            </div>
-            <div class="col">
-               <input  type="text" class="form-control" name="daterange" id="sop-range">
-            </div>
-            <div class="col-auto">
-               <button @click.prevent="fetchSop()" class="btn btn-sm btn-primary">Go</button>
-            </div>
-         </div>
+     
 
-        
-         <div class="card radius-10 ">
-            <div class="card-body">
-               <div class="chart-container-1">
-                  <sop-chart  :sop-data="Object.values(interview_percent)" :sop-labels="sop_labels" :sop-uploads="sop_uploads" :sop-reviews="sop_reviews" chart-id="sop-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
-               </div>
-            </div>
-            <div class="row row-group border-top g-0">
-               <div class="col">
-                  <div class="p-3 text-center">
-                     <h4 class="mb-0 text-blue">@{{sops.upload}}</h4>
-                     <p class="mb-0">Upload</p>
-                  </div>
-               </div>
-               <div class="col">
-                  <div class="p-3 text-center">
-                     <h4 class="mb-0 text-orange">@{{sops.review}}</h4>
-                     <p class="mb-0">Reviewed</p>
-                  </div>
-               </div>
-            </div>
-            <!--end row-->
-         </div>
-      </div>
-
-      <div class="col-md-3 col-lg-5  col-xl-4">
-         <div class="card-header bg-transparent px-0">
-            <div class="row">
-               <div class="col">
-                  <h6 class="mb-0">Top 5 states</h6>
-               </div>
-            </div>
-         </div>
-         <div class="row my-3">
-            <div class="col">
-               <input  type="text" class="form-control" name="daterange" id="top-state-range">
-            </div>
-            <div class="col-auto">
-               <button @click.prevent="fetchTopState()" class="btn btn-sm btn-primary">Go</button>
-            </div>
-         </div>
-
-        
-         <div class="card radius-10 ">
-            <div class="card-body">
-               <table class="table table-striped table-bordered">
-                  <thead>
-                     <tr>
-                        <th>State</th>
-                        <th>CATKing Students</th>
-                        <th>Non CATKing Students</th>
-                        <th>Total Students</th>
-                     </tr>
-                  </thead>
-                  <tbody id="top_state">
-                  </tbody>
-
-               </table>
-            </div>
-            <!--end row-->
-         </div>
-      </div>
-
-      {{-- <div class="col-md-3 col-lg-5  col-xl-4">
+      {{-- <div class="col-md-3 col-md-5  col-xl-4">
          <div class="card-header bg-transparent px-0">
             <div class="row">
                <div class="col">
@@ -864,7 +892,7 @@
          </div>
       </div>
 
-      <div class="col-md-3 col-lg-5  col-xl-4">
+      <div class="col-md-3 col-md-5  col-xl-4">
          <div class="card-header bg-transparent px-0">
             <div class="row">
                <div class="col">
@@ -903,7 +931,7 @@
             <!--end row-->
          </div>
       </div> --}}
-   </div>
+   
 </div>
 @endsection
 
@@ -945,7 +973,7 @@
 </script>
 <script>
    Vue.component("student-chart", {
-      extends: VueChartJs.Bar,
+      extends: VueChartJs.Line,
       props: ['studentLabel','studentData','chartId','studentCatking','studentNoncatking'],
       data(){
          return{
@@ -974,15 +1002,15 @@
             var ctx = document.getElementById(this.chartId).getContext('2d');
             var gradientStroke1 = ctx.createLinearGradient(0, 0, 0, 300);
             gradientStroke1.addColorStop(0, '#4472c4');
-            // gradientStroke1.addColorStop(1, 'rgba(22, 195, 233, 0.1)');
+            gradientStroke1.addColorStop(1, 'rgba(22, 195, 233, 0.1)');
 
             var gradientStroke2 = ctx.createLinearGradient(0, 0, 0, 300);
             gradientStroke2.addColorStop(0, '#ed7d31');
-            // gradientStroke2.addColorStop(1, 'rgba(230 ,150 ,96 , 0.1)');
+            gradientStroke2.addColorStop(1, 'rgba(230 ,150 ,96 , 0.1)');
 
             var gradientStroke3 = ctx.createLinearGradient(0, 0, 0, 300);
             gradientStroke3.addColorStop(0, '#6b7a99');
-            // gradientStroke3.addColorStop(1, 'rgba(165, 165, 165, 0.1)');
+            gradientStroke3.addColorStop(1, 'rgba(165, 165, 165, 0.1)');
    
             this.renderChart(
                {

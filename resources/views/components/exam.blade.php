@@ -42,7 +42,7 @@
                     @endif    
                     <div class="col-md-2 cat_{{$item}} {{$display}} disp">
                         <div class="mb-3">
-                            <label for="" class="form-label">Scores</label>
+                            <label for="" class="form-label">Scores <span style="color:red;">*</span></label>
                             <input type="text" name="exam[{{$relation_count}}][score]" id="score" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="col-md-3 col-lg cat_{{$item}} {{$display}} disp">
                         <div class="mb-3">
-                            <label for="" class="form-label">Score Card</label>
+                            <label for="" class="form-label">Score Card <span style="color:red;">*</span></label>
                             <input type="file"  id="score_card_file" class="form-control" onchange="getScorefile(this,'#card_file_{{$item}}','#sop_card{{$item}}')">
                             <input type="hidden" id="card_file_{{$item}}" name="exam[{{$relation_count}}][score_card]">
                         </div>

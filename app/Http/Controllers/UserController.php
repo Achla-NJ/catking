@@ -493,6 +493,11 @@ class UserController extends Controller
 
     public function updateSop(Request $request)
     {
+        $request->validate(
+            ["sop.*.*" => "required"],
+            ['sop.*.*.required' => 'File Field is required']
+        );
+
         if(!empty($request->user_id)){
             $user = User::query()->where('id', $request->user_id)->first();
         }else{

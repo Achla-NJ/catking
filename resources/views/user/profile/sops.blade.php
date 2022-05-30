@@ -113,14 +113,14 @@
                               <div class="row">
                                  <div class="col-md-6">
                                     <div class="mb-3">
-                                       <label for="" class="form-label">College Name</label>
+                                       <label for="" class="form-label">College Name <span style="color:red;">*</span></label>
 									   <p class="form-control">{{$college}}</p>
                                        <input type="hidden" name="sop[{{$sop_key}}][college]" readonly value="{{$sop->college_id}}" class="form-control">
                                     </div>
                                  </div>
                                  <div class="col-md-6">
                                     <div class="mb-3">
-                                       <label for="" class="form-label">Upload SOP</label>
+                                       <label for="" class="form-label">Upload SOP <span style="color:red;">*</span></label>
                                        <input type="file" onchange="getSopfile(this,'#sop_file_{{$sop_key}}')" class="form-control">
                                        <input type="hidden" name="sop[{{$sop_key}}][sop_file]" id="sop_file_{{$sop_key}}" value="{{$sop_file}}">
                                     </div>									

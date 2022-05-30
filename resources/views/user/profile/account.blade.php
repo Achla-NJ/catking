@@ -49,7 +49,7 @@
                </button></div>
             </div>
             @endif
-            <ul class="nav nav-pills nav-fill nav-primary" role="tablist" id="profile_tab">
+            <ul class="nav nav-pills nav-primary" role="tablist" id="profile_tab">
                <li class="nav-item" role="presentation">
                   <a class="nav-link active" data-bs-toggle="tab" href="#profile_besic" role="tab" aria-selected="true">
                      <div class="d-flex align-items-center">
@@ -100,7 +100,9 @@
                   </a>
                </li>
                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'teacher')
-               
+               <style>
+                  #profile_tab li{flex: 1 0 25%;margin-top: 5px;}
+               </style>
                <li class="nav-item" role="presentation">
                   <a class="nav-link " id="dream_link"  href="{{route('admin.exams',$user_id)}}" target="_blank">
                      <div class="d-flex align-items-center">

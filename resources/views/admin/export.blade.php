@@ -48,7 +48,7 @@
             <div class="card">
                 <div class="card-body position-relative">
                     <div class="col-12">
-                        <div class="border-2 border-bottom border-dark d-inline-block h4 mb-4 pb-2 pe-5">
+                        <div class="border-2 border-bottom border-dark d-inline-block h4 mb-4 pb-2 ">
                             User Export Data
                         </div>
                     </div>

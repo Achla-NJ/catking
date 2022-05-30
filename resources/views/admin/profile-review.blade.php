@@ -19,7 +19,7 @@
 </div>
 @endsection @section('main_content')
 <div class="row">
-    <div class="col-lg-3 col-md-6">
+    <div class="col-12 col-md-auto">
         <div class="card">
             <div class="card-body">
             <form action="{{route('admin.search-pi-student')}}" method="post" id="search-form" onsubmit="return false;">
@@ -88,7 +88,7 @@
                         // console.log(response.data.review.length);
                         if(response.data.review.length > 0){
                             for (var i = 0; i < response.data.review.length; i++){
-                                addMore(response.data.review[i].id,response.data.review[i].student_id,response.data.review[i].teacher,response.data.review[i].particulars,response.data.review[i].date,response.data.review[i].selection,response.data.review[i].type,response.data.review[i].remark);
+                                addMore(response.data.review[i].id,response.data.review[i].student_id,response.data.review[i].teacher,response.data.review[i].particulars,response.data.review[i].date,response.data.review[i].selection,response.data.review[i].type,response.data.review[i].remark,true);
                             }
                         }else{
                             addMore();
@@ -106,7 +106,7 @@
 
     });
 
-    function addMore(sid='',student_id='',teacher='',particulars='',date='',selection='',type='',remark=''){
+    function addMore(sid='',student_id='',teacher='',particulars='',date='',selection='',type='',remark='',haveData=false){
         inc++;
         var id = $("#student_id").val();
         // console.log(id)
@@ -118,16 +118,20 @@
 
         var counter =Math.floor(Math.random() * 100) +15;
         var html = `
-            <div class="accordion-item" id="profile_review_${counter}">
-                <a href="javascript:void(0)" class="accordion-button" type="button" >
+        <div class="accordion-item" id="profile_review_${counter}">
+                <h2 class="accordion-header" id="headingOne${counter}">
+                    <a href="javascript:void(0)" class="accordion-button col" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne${counter}">
                         Profile Review #${inc}
-                        <button class="btn btn-${(sid == '') ?'dark':'warning'} btn-sm mx-2" type="button" onclick="email('${student_id}','Profile')"><i class="bx bx-mail-send"></i></button>
-                        ${(sid === '') ? `<button class="btn btn-danger btn-sm" type="button" onclick="remove('#profile_review_${counter}')">X</button>`: `<button class="btn btn-danger btn-sm" type="button" onclick="deleterow('${sid}', '#profile_review_${counter}')">X</button>`}
-
                     </a>
                 </h2>
-                <div id="collapseOne${counter}" class="accordion-collapse collapse show" aria-labelledby="headingOne${counter}" data-bs-parent="#accordionExample">
+                <div id="collapseOne${counter}" class="accordion-collapse collapse  show aria-labelledby="headingOne${counter}" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
+                        <div class="actions mb-3 text-center text-lg-end">
+                            ${haveData ? `<button class="btn btn-dark btn-sm ms-2" onclick="editInterview(event,${counter})">Edit</button>`:''} 
+                            <button class="btn btn-${(sid == '') ?'dark':'warning'} btn-sm " type="button" onclick="email('${student_id}','Profile')"><i class="bx bx-mail-send"></i></button>
+                        ${(sid === '') ? `<button class="btn btn-danger btn-sm" type="button" onclick="remove('#profile_review_${counter}')">X</button>`: `<button class="btn btn-danger btn-sm" type="button" onclick="deleterow('${sid}', '#profile_review_${counter}')">X</button>`}
+                        
+                        </div>
                         <form action="{{route('admin.store-pi-review')}}" method="post"  id="form${counter}">
                             @csrf
                             <input type="hidden" name="url" value="admin.profile-review">

@@ -4,6 +4,7 @@
 @section('css_plugin')
 <link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
 <link href="{{asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
+<link href="{{asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
 @endsection
 
 @section('page_css')
@@ -77,10 +78,10 @@
 					</div>
 				</div>
 				
-				<div class="col-lg-11 mx-auto">
+				<div class="col-lg-12 mx-auto">
 					<div class="row">
 						<div class="table-responsive">
-							<table class="table b-table table-striped table-bordered">
+							<table class="table b-table table-striped table-bordered" id="example">
 								<thead class="table-dark">
 									<tr>
 										<th style="width:20%;">Sr No.</th>
@@ -272,5 +273,12 @@
 	}
 
 
+</script>
+<script src="{{asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>t>
+<script>
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
 </script>
 @endsection

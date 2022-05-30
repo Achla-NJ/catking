@@ -124,7 +124,7 @@ class UserMeta extends Model
     public const CURRICULAR = [
         'co' => 'Co-Curricular Details',
         'extra' => 'Extra Curricular Details',
-        'other' => 'Other relevant detailss',
+        'other' => 'Other relevant Details',
     ];
 
 
