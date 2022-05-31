@@ -274,7 +274,6 @@
                </div>
             </div>
          </div>
-         <div style="min-height: 38px" class="my-3 d-block"></div>
          <div class="card radius-10 ">
             <div class="card-body">
                
@@ -391,7 +390,7 @@
             <div class="d-flex align-items-center">
                <div class="row gy-3">
                   <div class="col">
-                     <h6 class="mb-0">Students with @{{score_exam2}} percentile</h6>
+                     <h6 class="mb-0">Students with @{{score_exam2.toUpperCase()}} percentile</h6>
                   </div>
                </div>
             </div>
@@ -465,7 +464,7 @@
             <div class="d-flex align-items-center">
                <div class="row gy-3">
                   <div class="col-md-12">
-                     <h6 class="mb-0">Students with @{{score_exam}} percentile</h6>
+                     <h6 class="mb-0">Students with @{{score_exam.toUpperCase()}} percentile</h6>
                   </div>
                </div>
             </div>
@@ -1221,7 +1220,7 @@
                   labels: this.labels,
                   datasets: [
                      {
-                        label: 'Traget Data',
+                        label: 'Target Data',
                         data:this.target_data,
                         pointBorderWidth: 2,
                         pointHoverBackgroundColor: gradientStroke1,

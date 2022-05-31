@@ -19,13 +19,13 @@ else{
     <div class="card-body">
         <div class="row align-items-center">
             <div class="col-12 col-sm-auto order-sm-2">
-                <button class="d-block w-auto ms-auto btn btn-danger btn-sm"  type="button" onclick="removeCall('#call_{{$relation_count}}','{{$item}}','{{$clg_name}}')"><i class="bx bx-trash m-0"></i></button>
+                <button class="d-block w-auto ms-auto btn btn-danger "  type="button" onclick="removeCall('#call_{{$relation_count}}','{{$item}}','{{$clg_name}}')"><i class="bx bx-trash m-0"></i></button>
             </div>
             <div class="col"> 
                 <div class="row">
                     <div class="col-md-6"> 
                         <div class="mb-3">
-                            <label for="" class="form-label">College Name</label>
+                            <label for="" class="form-label mb-0">College Name</label>
                                 @php $colleges = App\Models\College::all(); @endphp
                                 @foreach ($colleges as $clg)
                                     @if ($clg->id == $cname || $cname == $clg->name)
@@ -37,7 +37,7 @@ else{
                     </div>
                     <div class="col-md-5">
                         <div class="mb-3">
-                            <label for="" class="form-label">Add Document<span style="color:red;"> *</label></label></label>
+                            <label for="" class="form-label mb-0">Add Document<span style="color:red;"> *</label></label></label>
                             <input type="file" onchange="getCallfile(this,'#call_file_{{$relation_count}}','#sop_card{{$item}}')" class="form-control">
                             <input type="hidden" name="converted_call[{{$relation_count}}][call_file]" id="call_file_{{$relation_count}}" >
                         </div>

@@ -47,7 +47,7 @@
                   <form id="dream-college-form" action="{{route('profile.update-allcall')}}">
                      @csrf
                      <input type="hidden" value="{{$user_id}}" name="user_id" id="user_id">
-                     <div class="col-12">
+                     <div class="col-12 mb-3">
                         <div class="row align-items-center mb-2">
                            <div class="col-12">
                               <div class="bg-primary-4 font-20 h5 mb-4 p-2 ">
@@ -94,7 +94,7 @@
                                           <div class="row">
                                              <div class="col-md-6">
                                                 <div class="mb-3">
-                                                   <label for="" class="form-label">College Name</label>
+                                                   <label for="" class="form-label mb-0">College Name</label>
                                                    <p class="form-control">{{$college}}</p>
                                                    <input type="hidden" readonly value="{{$interview->college_id}}" name="interview[{{$interview_key}}][college]" class="form-control">
                                                 </div>
@@ -102,7 +102,7 @@
                                              <div class="col-md-6">
                                                 <div class="mb-3">
                                                    <label for=""
-                                                      class="form-label">Select Date <span style="color:red;">*</span></label></label>
+                                                      class="form-label mb-0">Select Date <span style="color:red;">*</span></label></label>
                                                    <input type="date" name="interview[{{$interview_key}}][interview_date]" value="{{$interview_date}}" class="form-control">
                                                 </div>
                                              </div>
@@ -183,23 +183,23 @@
                                           <div class="row">
                                              <div class="col-md-6">
                                                 <div class="mb-3">
-                                                   <label for="" class="form-label">College Name</label>
+                                                   <label for="" class="form-label mb-0">College Name</label>
                                                    <p class="form-control">{{$converted_call->college->name}}</p>
                                                    <input type="hidden" readonly value="{{$converted_call->college_id}}" class="form-control" name="converted_call[{{$converted_key}}][college]">
                                                 </div>
                                              </div>
                                              <div class="col-md-5">
                                                 <div class="mb-3">
-                                                   <label for="" class="form-label">Add Document <span style="color:red;">*</span></label>
-                                                   <input type="file" onchange="getCallfile(this,'#call_file_{{$converted_key}}')" class="form-control">
+                                                   <label for="" class="form-label mb-0">Add Document <span style="color:red;">*</span></label>
+                                                   <input type="file" onchange="getCallfile(this,'#call_file_{{$converted_key}}','#sop_card{{$converted_key}}')" class="form-control">
                                                    <input type="hidden" name="converted_call[{{$converted_key}}][call_file]" id="call_file_{{$converted_key}}" value="{{$call_file}}">
 
                                                 </div>
 
                                              </div>
                                              @if(!empty($call_file))
-                                                <div class="col-md-1 my-auto">
-                                                   <a href="{{route('user-files', $call_file)}}" class="btn btn-warning btn-sm" target="_blank" >view</a>
+                                                <div class="col-md-1 my-auto" id="sop_card{{$converted_key}}">
+                                                   <a href="{{route('user-files', $call_file)}}" class="btn btn-warning " target="_blank" >View</a>
                                                 </div>
                                                 @endif
                                           </div>

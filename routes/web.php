@@ -140,7 +140,7 @@ Route::post('insert-college',[CollegeController::class,'store'])->name('insert-c
 Route::get('/personal-interviews',[ReviewController::class,'pinterview'])->name('pi');
 Route::get('/profile-reviews',[ReviewController::class,'profile'])->name('profile');
 Route::get('/watpi-and-cdpi',[UserController::class,'watpi'])->name('watpi');
-Route::get('/user-files/{file_name?}',[UserController::class,'userFiles'])->name('user-files');
+Route::get('/user-files/{file_name}',[UserController::class,'userFiles'])->name('user-files');
 
 Route::get('score-calculator/cat',[UserCatResultController::class,'index'])->name('cat-result');
 Route::post('user-cat-result',[UserCatResultController::class,'catResult'])->name('user-cat-result');

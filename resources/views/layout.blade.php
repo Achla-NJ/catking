@@ -258,7 +258,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 						<a href="https://catking.in/" target="blank">
 							<div class="parent-icon"><i class='bx bx-link-external'></i>
 							</div>
-							<div class="menu-title">Webiste</div>
+							<div class="menu-title">Website</div>
 						</a>
 					</li>
 					<li>
@@ -330,7 +330,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<li>
 								<a class="dropdown-item" href="https://catking.in/" target="blank">
 									<i class='bx bx-link-external'></i>
-									<span>Webiste</span>
+									<span>Website</span>
 								</a>
 							</li>
 							<li>

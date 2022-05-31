@@ -36,7 +36,7 @@ function getSopfile(event,id,sop_id){
         cache:"false",
         success:function(response){                                              
             $(id).val(response.message);    
-            $(sop_id).html(`<a href=${response.url} class="btn btn-warning btn-sm" target="_blank" >View</a>`)                                                
+            $(sop_id).html(`<a href=${response.url} class="btn btn-warning " target="_blank" >View</a>`)                                                
         },
         error:function(response){
             

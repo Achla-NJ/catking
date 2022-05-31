@@ -60,14 +60,14 @@
                            $score_card = $exam->score_card_file;
                         @endphp
                          <div class="col-12 exam_div" id="exam_row_{{$exam_key}}">
-                           <div class="row align-items-center g-2">
+                           <div class="row align-items-center">
                               <div class="col-12 d-flex col-md mb-4" >
                                  @php
                                    $exm_name = $exam_type == 'other'?'Other Exams': strtoupper($exam_type);
                                  @endphp
                                  <div class="col me-2 bg-primary-4 font-20 h5  p-2  mb-0" >{{$exm_name}} Result</div>
                                    
-                                    <button class="d-block w-auto ms-auto btn btn-danger btn-sm" type="button"onclick="removeExam('#exam_row_{{$exam_key}}','{{ucfirst($exam_type)}}','{{$exam_type}}')"><i class="bx bx-trash m-0"></i></button>
+                                    <button class="d-block w-auto ms-auto btn btn-danger" type="button"onclick="removeExam('#exam_row_{{$exam_key}}','{{ucfirst($exam_type)}}','{{$exam_type}}')"><i class="bx bx-trash m-0"></i></button>
                                    
                               </div>
                               <div class="col-12" >
@@ -75,11 +75,11 @@
                                     <div class="col-md-2 disp">
                                        <div class="mb-3">
                                           @if ($exam_type == 'other')
-                                             <label for="" class="form-label">Exam Name <span style="color:red;">*</span></label>
+                                             <label for="" class="form-label mb-0">Exam Name <span style="color:red;">*</span></label>
                                              <input type="hidden" value="other" name="exam[{{$exam_key}}][exam_type]">
                                              <input type="text"  name="exam[{{$exam_key}}][name]" value="{{$name}}" data-set="{{$exam_type}}" class="form-control"  >
                                           @else
-                                          <label for="" class="form-label">Took {{$exm_name}}</label>
+                                          <label for="" class="form-label mb-0">Took {{$exm_name}}</label>
                                           <input type="hidden" value="{{$exam_type}}" name="exam[{{$exam_key}}][exam_type]">
                                           <select name="exam[{{$exam_key}}][took_exam]" id="exam_opt_{{$exam_key}}" data-set="cat_{{$exam_key}}" class="form-select">
                                           <option value="no" {{$took_exam == 'no'?"selected=selected":""}}>No</option>
@@ -98,26 +98,26 @@
                                     @endphp
                                     <div class="col-md-2 cat_{{$exam_key}} {{$display}} disp">
                                        <div class="mb-3">
-                                          <label for="" class="form-label">Scores <span style="color:red;">*</span></label>
+                                          <label for="" class="form-label mb-0">Scores <span style="color:red;">*</span></label>
                                           <input type="text" name="exam[{{$exam_key}}][score]" id="score" class="form-control"value="{{$score}}">
                                        </div>
                                     </div>
                                     <div class="col-md-2 col-lg-auto cat_{{$exam_key}} {{$display}} disp">
                                        <div class="mb-3">
-                                          <label for="" class="form-label">Percentile (if available) </label>
+                                          <label for="" class="form-label mb-0">Percentile (if available) </label>
                                           <input type="text" name="exam[{{$exam_key}}][percentile]" id="percentile" class="form-control percentile" value="{{$percentile}}">
                                        </div>
                                     </div>
                                     <div class="col-md-3  col-lg cat_{{$exam_key}} {{$display}} disp">
                                        <div class="mb-3">
-                                          <label for="" class="form-label">Score Card <span style="color:red;">*</span></label>
-                                          <input type="file"  id="score_card_file" class="form-control" onchange="getScorefile(this,'#card_file_{{$exam_key}}')">
+                                          <label for="" class="form-label mb-0">Score Card <span style="color:red;">*</span></label>
+                                          <input type="file"  id="score_card_file" class="form-control" onchange="getScorefile(this,'#card_file_{{$exam_key}}','#sop_card{{$exam_key}}')">
                                           <input type="hidden" id="card_file_{{$exam_key}}" name="exam[{{$exam_key}}][score_card]" value="{{$score_card}}">
                                        </div>
                                     </div>
                                        @if(!empty($score_card))
-                                       <div class="col-md-2 col-lg-auto cat_{{$exam_key}} {{$display}} my-auto">
-                                          <a href="{{route('user-files', $score_card)}}" class="btn btn-warning btn-sm" target="_blank" >View</a>
+                                       <div class="col-md-2 col-lg-auto cat_{{$exam_key}} {{$display}} my-auto" id="sop_card{{$exam_key}}">
+                                          <a href="{{route('user-files', $score_card)}}" class="btn btn-warning " target="_blank" >View</a>
                                        </div>
                                        @endif
 

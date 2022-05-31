@@ -56,17 +56,17 @@
                   @endphp
                   <div class="card sop_div" id="college_row_{{$sop_key}}">
                      <div class="card-body">
-                        <div class="row align-items-center">
+                        <div class="row align-items-end gy-3">
                            <div class="col-12 col-xl order-xl-2">
-								<div class="row align-items-center justify-content-center">
-									<div class="col-auto">
+								<div class="row align-items-center">
+									<div class="col-auto" id="sop_card{{$sop_key}}">
 										@if(!empty($sop_file))
-										<a href="{{route('user-files', $sop_file)}}" class="btn btn-warning btn-sm" target="_blank" >view</a>
+										<a href="{{route('user-files', $sop_file)}}" class="btn btn-warning " target="_blank"  >View</a>
 										@endif
 									</div>
 									@if (!empty($sop_review))									
 									<div class="col-auto">
-										<a role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$sop_key}}"class="btn btn-dark btn-sm" target="_blank" >View Review</a>
+										<a role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$sop_key}}"class="btn btn-dark " target="_blank" >View Review</a>
 										<div class="modal fade" id="staticBackdrop{{$sop_key}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 											<div class="modal-dialog">
 											  <div class="modal-content">
@@ -104,7 +104,7 @@
 									</div>
 									@endif
 									<div class="col-auto">
-										<button class="d-block w-auto ms-auto btn btn-danger btn-sm" type="button" onclick="remove_row('#college_row_{{$sop_key}}','{{$clg_id}}','{{$college}}')"><i class="bx bx-trash m-0"></i>
+										<button class="d-block w-auto ms-auto btn btn-danger " type="button" onclick="remove_row('#college_row_{{$sop_key}}','{{$clg_id}}','{{$college}}')"><i class="bx bx-trash m-0" style="font-size:1rem;"></i>
 										</button>
 									</div>
 								</div>
@@ -112,16 +112,16 @@
                            <div class="col-lg-8">
                               <div class="row">
                                  <div class="col-md-6">
-                                    <div class="mb-3">
+                                    <div class="mb-0">
                                        <label for="" class="form-label">College Name <span style="color:red;">*</span></label>
-									   <p class="form-control">{{$college}}</p>
+									   <p class="form-control mb-0">{{$college}}</p>
                                        <input type="hidden" name="sop[{{$sop_key}}][college]" readonly value="{{$sop->college_id}}" class="form-control">
                                     </div>
                                  </div>
                                  <div class="col-md-6">
-                                    <div class="mb-3">
+                                    <div class="mb-0">
                                        <label for="" class="form-label">Upload SOP <span style="color:red;">*</span></label>
-                                       <input type="file" onchange="getSopfile(this,'#sop_file_{{$sop_key}}')" class="form-control">
+                                       <input type="file" onchange="getSopfile(this,'#sop_file_{{$sop_key}}','#sop_card{{$sop_key}}')" class="form-control">
                                        <input type="hidden" name="sop[{{$sop_key}}][sop_file]" id="sop_file_{{$sop_key}}" value="{{$sop_file}}">
                                     </div>									
                                  </div>

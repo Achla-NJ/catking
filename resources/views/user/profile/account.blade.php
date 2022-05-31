@@ -49,7 +49,8 @@
                </button></div>
             </div>
             @endif
-            <ul class="nav nav-pills nav-primary" role="tablist" id="profile_tab">
+          
+            <ul class="nav nav-pills nav-primary {{(Auth::user()->role == 'student') ? 'nav-fill' : ''}}" role="tablist" id="profile_tab">
                <li class="nav-item" role="presentation">
                   <a class="nav-link active" data-bs-toggle="tab" href="#profile_besic" role="tab" aria-selected="true">
                      <div class="d-flex align-items-center">
