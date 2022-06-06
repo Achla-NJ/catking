@@ -951,4 +951,22 @@ class UserController extends Controller
         }
         return back();
     }
+
+    public function updateWorkHardStatus(Request $request,$user_id='')
+    {
+        if(!empty($user_id)){
+            $user = User::query()->where('id',$user_id)->first();
+        }else{
+            $user = Auth::user();
+            $user_id = Auth::id();
+        }
+        $usr = User::find($user_id);
+        $usr->work_hard = $request->sts;
+        $save = $usr->update();
+        if($save){
+            echo "saved";
+        }
+    }
 }
+
+

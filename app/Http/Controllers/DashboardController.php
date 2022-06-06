@@ -52,11 +52,11 @@ class DashboardController extends Controller
         $total_student = User::query()->get()->count();
 
         if($state !=''){
-            $catking['total_catking_student'] = User::query()->whereBetween('updated_at', [$from, $to])->where('is_catking_student','yes')->where('state',$state)->get()->count();
+            $catking['total_catking_student'] = User::query()->whereBetween('updated_at', [$from, $to])->whereIn('is_catking_student',['yes','mocks','gddpi'])->where('state',$state)->get()->count();
             $catking['total_non_catking_student'] = User::query()->whereBetween('updated_at', [$from, $to])->where('is_catking_student','no')->where('state',$state)->get()->count();
         }
         else{
-            $catking['total_catking_student'] = User::query()->whereBetween('updated_at', [$from, $to])->where('is_catking_student','yes')->get()->count();
+            $catking['total_catking_student'] = User::query()->whereBetween('updated_at', [$from, $to])->whereIn('is_catking_student',['yes','mocks','gddpi'])->get()->count();
             $catking['total_non_catking_student'] = User::query()->whereBetween('updated_at', [$from, $to])->where('is_catking_student','no')->get()->count();
         }
         
@@ -294,7 +294,7 @@ class DashboardController extends Controller
                                                 ->count();
                 $cat_last_total[$i]     =       User::whereYear('created_at', '=', $year-1)
                                                 ->whereMonth('created_at', '=', 12)
-                                                ->where('is_catking_student','yes')
+                                                ->whereIn('is_catking_student',['yes','mocks','gddpi'])
                                                 ->get()
                                                 ->count();
                 $non_cat_last_total[$i] =       User::whereYear('created_at', '=', $year-1)
@@ -309,7 +309,7 @@ class DashboardController extends Controller
                                             ->count();
                 $cat_last_total[$i]     =   User::whereYear('created_at', '=', $year)
                                             ->whereMonth('created_at', '=', $i-1)
-                                            ->where('is_catking_student','yes')
+                                            ->whereIn('is_catking_student',['yes','mocks','gddpi'])
                                             ->get()
                                             ->count();
                 $non_cat_last_total[$i] =    User::whereYear('created_at', '=', $year)
@@ -323,7 +323,7 @@ class DashboardController extends Controller
                                             ->count();
             $cat_cur_total[$i]          =   User::whereYear('created_at', '=', $year)
                                             ->whereMonth('created_at', '=', $i)
-                                            ->where('is_catking_student','yes')
+                                            ->whereIn('is_catking_student',['yes','mocks','gddpi'])
                                             ->get()
                                             ->count();
             $non_cat_cur_total[$i]      =   User::whereYear('created_at', '=', $year)
@@ -372,7 +372,7 @@ class DashboardController extends Controller
         $catking_growth=[];
         $year = $request->date;
         for($i=1;$i<=12;$i++){
-            $catking_growth['catking'][date("M", mktime(0, 0, 0, $i, 10))] = User::whereYear('created_at', '=', $year)->where('is_catking_student','yes')
+            $catking_growth['catking'][date("M", mktime(0, 0, 0, $i, 10))] = User::whereYear('created_at', '=', $year)->whereIn('is_catking_student',['yes','mocks','gddpi'])
             ->whereMonth('created_at', '=', $i)
             ->get()->count();
 
@@ -433,7 +433,7 @@ class DashboardController extends Controller
         // $target['percent']['target2'] = 0;
         // $target['percent']['target3'] = 100-$target['percent']['target'];
         
-        for($i = date('Y'); $i >= 2010; $i--){
+        for($i = date('Y'); $i >= 2020; $i--){
             $target['actual'][$i] = User::whereYear('created_at', '=', $i)
             ->get()->count();
             $target['target'][$i]= $target_no;
@@ -519,7 +519,7 @@ class DashboardController extends Controller
                 foreach ($single_state as $state) {
                     $html .=    "<tr>
                                 <td>".$state['name']."</td>
-                                <td>".User::query()->where("state",$sts->state)->where('is_catking_student','yes')
+                                <td>".User::query()->where("state",$sts->state)->whereIn('is_catking_student',['yes','mocks','gddpi'])
                                 ->get()->count()."</td>
                                 <td>".User::query()->where("state",$sts->state)->where('is_catking_student','no')->get()->count()."</td>
                                 <td>".User::query()->where("state",$sts->state)->get()->count()."</td>

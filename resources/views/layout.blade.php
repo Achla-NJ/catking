@@ -141,7 +141,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 					</li>
 					@endif
 				@elseif (Auth::user()->role =='student')
-					<li class="menu-label">Profile</li>
+					<li class="menu-label">Profile section</li>
 		
 					{{-- <li> <a href="{{route('profile.view')}}">View Profile</a>
 					</li> --}}
@@ -149,12 +149,19 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 						<a href="{{route('profile.account')}}">
 							<div class="parent-icon"><i class='bx bx-user-pin font-18 me-1'></i>
 							</div>
-							<div class="menu-title">Account</div>
+							<div class="menu-title">My Profile</div>
+						</a>
+					</li>
+					<li>
+						<a href="{{route('profile')}}">
+							<div class="parent-icon"><i class='bx bx-star'></i>
+							</div>
+							<div class="menu-title">Profile feedback</div>
 						</a>
 					</li>
 					{{-- <li> <a href="{{route('profile.review')}}">Profile Review</a>
 					</li> --}}
-
+					<li class="menu-label">After exams</li>
 					<li> 
 						<a href="{{route('profile.exams')}}">
 							<div class="parent-icon"><i class='bx bx-copy-alt font-18 me-1'></i>
@@ -184,19 +191,13 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<div class="menu-title">Personal Interviews</div>
 						</a>
 					</li>
-					<li>
-						<a href="{{route('profile')}}">
-							<div class="parent-icon"><i class='bx bx-star'></i>
-							</div>
-							<div class="menu-title">Profile Reviews</div>
-						</a>
-					</li>
+					
 					<li>
 						@php $wat_page= @\App\Models\CustomPage::find(1) @endphp
 						<a href="{{route('view-page',$wat_page->slug)}}">
 							<div class="parent-icon"><i class='lni lni-layers'></i>
 							</div>
-							<div class="menu-title">WATPI & CDPI Dockets</div>
+							<div class="menu-title">WATPI dockets</div>
 						</a>
 					</li>
 				@endif
@@ -210,6 +211,8 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<div class="menu-title">Score Calculator</div>
 						</a>
 						<ul>
+							<li> <a href="{{route('cat-predictor')}}"><i class="bx bx-right-arrow-alt"></i>CAT Percentile Predictor without Response Sheet </a>
+							</li>
 							<li> <a href="{{route('cat-result')}}"><i class="bx bx-right-arrow-alt"></i>CAT Result
 								 </a>
 							</li>
@@ -219,8 +222,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<li> <a href="{{route('iift-result')}}"><i class="bx bx-right-arrow-alt"></i>IIFT Result
 								 </a>
 							</li>
-							<li> <a href="{{route('cat-predictor')}}"><i class="bx bx-right-arrow-alt"></i>CAT Percentile Predictor without Response Sheet </a>
-							</li>
+							
 							{{-- <li> <a href="{{route('cat-score')}}"><i class="bx bx-right-arrow-alt"></i>CAT CAT Score Calculator </a>
 							</li> --}}
 						</ul>
@@ -280,6 +282,13 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<div class="parent-icon"><i class="lni lni-instagram"></i>
 							</div>
 							<div class="menu-title">Instagram</div>
+						</a>
+					</li>
+					<li>
+						<a href="https://api.whatsapp.com/send?phone=8999118999" target="blank">
+							<div class="parent-icon"><i class="lni lni-whatsapp"></i>
+							</div>
+							<div class="menu-title">Whatsapp</div>
 						</a>
 					</li>
 				@endif
@@ -376,7 +385,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<div class="alert border-0 border-start border-5 border-info alert-dismissible fade show border-primary-1">
 								<div class="align-items-center d-flex">
 									<div class="d-inline-block px-3">
-										<div class="font-13 text-danger">Announcements</div>
+										<div class="font-13 text-danger"><i class="bx bx-volume-full"></i>Announcements</div>
 										<div class="row g-2 align-items-center">
 											<div class="col">
 												<div class="font-18">

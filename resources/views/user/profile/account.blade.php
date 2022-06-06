@@ -199,7 +199,9 @@
                                  <div class="mb-3">
                                     <label for="student" class="form-label">CATKing Student</label>
                                     <select name="is_catking_student" id="student" class="form-select">
-                                       <option value="yes" {{$user->is_catking_student == 'yes' ? "selected=selected" :""}}>Yes</option>
+                                       <option value="yes" {{$user->is_catking_student == 'yes' ? "selected=selected" :""}}>Yes - Classroom student</option>
+                                       <option value="mocks" {{$user->is_catking_student == 'mocks' ? "selected=selected" :""}}>Yes - Mocks student</option>
+                                       <option value="gdpi" {{$user->is_catking_student == 'gdpi' ? "selected=selected" :""}}>Yes - GDPI student</option>
                                        <option value="no" {{$user->is_catking_student == 'no' ? "selected=selected" :""}}>No</option>
                                     </select>
                                  </div>
@@ -287,12 +289,12 @@
                               }
                               elseif($class_type == "graduation" || $class_type == "post_graduation"){
                                     $board_name_label = 'Degree';
-                                    $other_board_name_label = "Course Name";
+                                    $other_board_name_label = "Degree name";
                                     $school_name_label = "College";
                               }
                               elseif($class_type == "diploma" || $class_type == "other"){
                                     $board_name_label = 'Course';
-                                    $other_board_name_label = "Course Name";
+                                    $other_board_name_label = "Degree name";
                                     $school_name_label = "Institute";
                               }
                            @endphp
@@ -628,6 +630,13 @@
                               <div class="row align-items-center mb-2">
                                  <div class="col-12">
                                     <div class="bg-primary-4 font-20 h5 mb-4 p-2 ">Dream colleges</div>
+                                    <div class="form-check">
+                                       <input class="form-check-input" type="checkbox" value="1" name="work_hard" id="work_hard" {{(Auth::user()->work_hard == 1) ? 'checked':''}} onchange="updateWorkHardStatus(this,'{{route('profile.update-work-hard')}}')">
+                                       <label class="form-check-label" for="work_hard" >
+                                          I will work very hard to convert my dream colleges
+                                       </label>
+                                     </div>
+                                     
                                  </div><div class="col-12">
                                     @php
                                        $user_college_ids = collect($user['dream_colleges'] ?? [])->pluck('college_id')->toArray();
@@ -671,4 +680,25 @@
 @endsection
 @section('script')
    <script src="{{asset('assets/js/account.js')}}"></script>
+   <script>
+      function updateWorkHardStatus(elem,url){
+          let sts;
+          if(elem.checked){
+             sts = 1;
+          }else{
+             sts = 0;
+          }
+          $.ajax({
+             type: "get",
+             url,
+             data: {sts},
+             
+             success:function(response){
+                   // successMessage(response.message);
+             },
+             error:function(response){
+             }
+          });
+       }
+  </script>
 @endsection

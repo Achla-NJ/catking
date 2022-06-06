@@ -131,6 +131,7 @@ Route::group(['middleware'=> 'auth'],function(){
         Route::post('add-curricular',[UserController::class,'addCurricular'])->name('add-curricular');
         Route::post('add-extradetail',[UserController::class,'addExtraDetail'])->name('add-extradetail');
         Route::post('update-curricular',[UserController::class,'updateCurricular'])->name('update-curricular');
+        Route::get('update-work-hard',[UserController::class,'updateWorkHardStatus'])->name('update-work-hard');
     });
 });
 

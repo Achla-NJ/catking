@@ -292,7 +292,7 @@
          <div class="card-header bg-transparent mb-3 px-0">
             <div class="row gy-3">
                <div class="col-12">
-                  <h6 class="mb-0">Growth of  Total No. Of Students - CATKing and Non-CATKing</h6>
+                  <h6 class="mb-0">Distribution of Students</h6>
                </div>
             </div>
          </div>
@@ -321,7 +321,7 @@
          <div class="card-header bg-transparent mb-3 px-0">
             <div class="row gy-3">
                <div class="col-12">
-                  <h6 class="mb-0">Growth % of Students</h6>
+                  <h6 class="mb-0">% Growth of Students</h6>
                </div>
             </div>
          </div>
@@ -355,7 +355,7 @@
          <div class="card-header bg-transparent px-0">
             <div class="row ">
                <div class="col">
-                  <h6 class="mb-0">Students appearing for different exams</h6>
+                  <h6 class="mb-0">Distribution Of Students By Exams</h6>
                </div>
             </div>
          </div>
@@ -390,7 +390,7 @@
             <div class="d-flex align-items-center">
                <div class="row gy-3">
                   <div class="col">
-                     <h6 class="mb-0">Students with @{{score_exam2.toUpperCase()}} percentile</h6>
+                     <h6 class="mb-0">Distribution Of Students By Percentile</h6>
                   </div>
                </div>
             </div>
@@ -464,7 +464,7 @@
             <div class="d-flex align-items-center">
                <div class="row gy-3">
                   <div class="col-md-12">
-                     <h6 class="mb-0">Students with @{{score_exam.toUpperCase()}} percentile</h6>
+                     <h6 class="mb-0">Distribution Of Students By Score & Percentile</h6>
                   </div>
                </div>
             </div>
@@ -530,7 +530,7 @@
          <div class="card-header bg-transparent px-0">
             <div class="row">
                <div class="col">
-                  <h6 class="mb-0">Received And Converted Calls</h6>
+                  <h6 class="mb-0">College-wise Performance</h6>
                </div>
             </div>
          </div>
@@ -585,7 +585,7 @@
          <div class="card-header bg-transparent px-0">
             <div class="row">
                <div class="col">
-                  <h6 class="mb-0">Uploaded And Reviewed Sops</h6>
+                  <h6 class="mb-0">SOP Review Performance</h6>
                </div>
             </div>
          </div>
@@ -639,7 +639,7 @@
             <div class="d-flex align-items-center">
                <div class="row gy-3">
                   <div class="col-md-12">
-                     <h6 class="mb-0">CATKing & Non-CATKing Students</h6>
+                     <h6 class="mb-0">Distribution By State</h6>
                   </div>
                </div>
             </div>
@@ -720,7 +720,7 @@
          <div class="card-header bg-transparent px-0">
             <div class="row">
                <div class="col">
-                  <h6 class="mb-0">Students based on degrees</h6>
+                  <h6 class="mb-0">Distribution Of Students By Degree</h6>
                </div>
             </div>
          </div>
@@ -745,7 +745,7 @@
          <div class="card-header bg-transparent px-0">
             <div class="row">
                <div class="col">
-                  <h6 class="mb-0">Students work experience</h6>
+                  <h6 class="mb-0">Distribution Of Students By Work Experience</h6>
                </div>
             </div>
          </div>
@@ -1016,30 +1016,30 @@
                   labels: this.labels,
                   datasets: [
                      {
-                        label: 'Student Growth',
+                        label: 'Total Students',
                         data:this.student_data,
                         pointBorderWidth: 2,
                         pointHoverBackgroundColor: gradientStroke1,
-                        backgroundColor: gradientStroke1,
+                        // backgroundColor: gradientStroke1,
                         borderColor: gradientStroke1,
                         borderWidth: 3
                      },
                      
                      {
-                        label: 'Non CATKing Student Growth',
+                        label: 'Non CATKing Students',
                         data: this.student_non_catking,
                         pointBorderWidth: 2,
                         pointHoverBackgroundColor: gradientStroke2,
-                        backgroundColor: gradientStroke2,
+                        // backgroundColor: gradientStroke2,
                         borderColor: gradientStroke2,
                         borderWidth: 3
                    },
                    {
-                        label: 'CATKing Growth',
+                        label: 'CATKing Students',
                         data: this.student_catking,
                         pointBorderWidth: 2,
                         pointHoverBackgroundColor: gradientStroke3,
-                        backgroundColor: gradientStroke3,
+                        // backgroundColor: gradientStroke3,
                         borderColor: gradientStroke3,
                         borderWidth: 3
                    }
@@ -1096,7 +1096,7 @@
                   labels: this.labels,
                   datasets: [
                      {
-                        label: 'Total Growth',
+                        label: 'Total Students',
                         data: this.total_growth_data,
                         pointBorderWidth: 2,
                         pointHoverBackgroundColor: gradientStroke1,
@@ -1105,7 +1105,7 @@
                         borderWidth: 3
                      },
                      {
-                           label: 'Non CATKing Student Growth',
+                           label: 'Non CATKing Students',
                            data: this.non_catking_data,
                            pointBorderWidth: 2,
                            pointHoverBackgroundColor: gradientStroke2,
@@ -1114,7 +1114,7 @@
                            borderWidth: 3
                      },
                      {
-                        label: 'CATKing Student Growth',
+                        label: 'CATKing Students ',
                         data:this.catking_data,
                         pointBorderWidth: 2,
                         pointHoverBackgroundColor: gradientStroke3,
@@ -1519,7 +1519,7 @@
                   labels: this.labels,
                   datasets: [
                      {
-                        label: 'upload',
+                        label: 'Upload',
                         data: this.uploads,
                         borderColor: gradientStroke1,
                         backgroundColor: gradientStroke1,
@@ -1673,7 +1673,7 @@
                   labels: this.labels,
                   datasets: [
                      {
-                        label: 'converted',
+                        label: 'Converted',
                         data: this.converted,
                         borderColor: gradientStroke1,
                         backgroundColor: gradientStroke1,
@@ -1683,7 +1683,7 @@
                         borderWidth: 1
                      },
                      {
-                        label: 'received',
+                        label: 'Received',
                         data: this.received,
                         borderColor: gradientStroke2,
                         backgroundColor: gradientStroke2,
@@ -1849,7 +1849,7 @@
                   labels: this.labels,
                   datasets: [
                      {
-                        label: 'upload',
+                        label: 'Upload',
                         data: this.degree,
                         borderColor: gradientStroke1,
                         backgroundColor: gradientStroke1,

@@ -140,6 +140,7 @@
                         <div class="text-center">
                             <img src="{{asset("assets/images/nofound.webp")}}" alt="" style="max-height: 300px" >
                             <h6>No Review Yet.</h6>
+                            <p>Update your My Profile section to get your profile reviewed by an expert mentor</p>
                         </div>
                         <div class="h3">
                             Get 1 additional Interview.
