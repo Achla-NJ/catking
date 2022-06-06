@@ -14,12 +14,14 @@ class ExamsScore implements FromCollection, WithTitle, WithHeadings
     protected $columns = [];
     protected $exams = [];
     protected $users = [];
+    protected $exams_score = [];
     protected $other_exams_count = 0;
-
-    public function __construct($users)
+ 
+    public function __construct($users,array $exams_score)
     {
         $this->users = $users;
-        $this->exams = Exam::query()->get();
+        $this->exams_score = $exams_score;
+        $this->exams = Exam::query()->whereIn('id', $this->exams_score)->get();
         $this->columns = [
             'user_id' => 'User ID',
             'user_name' => 'User Name',
@@ -40,9 +42,10 @@ class ExamsScore implements FromCollection, WithTitle, WithHeadings
             ->orderBy('count', 'DESC')
             ->limit(1)
             ->get()->first();
-
-        if(intval($highest_other_exam_count->count ?? 0) > 0){
-            $this->other_exams_count = $highest_other_exam_count->count;
+        if(in_array(0,$exams_score)){
+            if(intval($highest_other_exam_count->count ?? 0) > 0){
+                $this->other_exams_count = $highest_other_exam_count->count;
+            }
         }
 
         for ($i = 0; $i < $this->other_exams_count; $i++){

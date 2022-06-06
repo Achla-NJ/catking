@@ -37,9 +37,9 @@ class UsersExport implements WithMultipleSheets
         if(!empty(@$this->options['education'])){
             $users = $users->with('education');
         }
-        if(!empty(@$this->options['exams_score'])){
-            $users = $users->with('exams');
-        }
+        // if(!empty(@$this->options['exams_score'])){
+        //     $users = $users->with('exams');
+        // }
         if(!empty(@$this->options['work'])){
             $users = $users->with('work');
         }
@@ -66,8 +66,8 @@ class UsersExport implements WithMultipleSheets
         if(!empty(@$this->options['dream_colleges'] ?? [])){
             $sheets[] = new DreamColleges($users, $this->options['dream_colleges'] ?? []);
         }
-        if(!empty(@$this->options['exams_score'])){
-            $sheets[] = new ExamsScore($users);
+        if(!empty(@$this->options['exams_score'] ?? [])){
+            $sheets[] = new ExamsScore($users,$this->options['exams_score'] ?? []);
         }
         if(!empty(@$this->options['sop_colleges'] ?? [])){
             $sheets[] = new SopColleges($users, $this->options['sop_colleges'] ?? []);

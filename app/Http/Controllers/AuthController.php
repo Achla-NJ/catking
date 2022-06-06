@@ -58,7 +58,7 @@ class AuthController extends Controller
                     'body' => $user->email.' Create New Account',
                 ];
 
-                \Mail::to((env('MAIL_FROM_ADDRESS')))->send(new Mail($details));
+                \Mail::to('profile.catking@gmail.com')->send(new Mail($details));
                 return redirect()->route('profile.account');
             }
         }

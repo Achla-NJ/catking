@@ -206,17 +206,30 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3 bg-light p-2">
+                               
+
+                                <div class="row mb-3 bg-light p-2" data-cbgrp="sop">
                                     <div class="col-7 col-md-4">
                                         <h6>Exam Scores</h6>
                                     </div>
                                     <div class="col col-md-8 mb-3 text-end">
                                         <div class="form-check d-inline-block">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" v-model="options.exams_score"/>
-                                                Select
+                                                <input class="form-check-input" type="checkbox" name="exam" data-cbgrp-toggle="exam" />
+                                                Select All
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <v-select
+                                            v-model="options.exams_score"
+                                            :options="exams"
+                                            label="name"
+                                            placeholder="exams scores"
+                                            taggable
+                                            multiple
+                                            :reduce="option => option.id"
+                                        ></v-select>
                                     </div>
                                 </div>
 
@@ -522,13 +535,14 @@
                         work: false,
                         curricular: false,
                         dream_colleges: [],
-                        exams_score: false,
+                        exams_score: [],
                         sop_colleges: [],
                         received_call_colleges: [],
                         interview_date_colleges: [],
                         converted_call_colleges: [],
                     },
                     colleges: [],
+                    exams: [],
                     perPage: 10,
                     currentPage: 1,
                     perPageOptions: [10, 25, 50, 100],
@@ -568,7 +582,7 @@
                     if(group === 'all'){
                         vue.options.curricular = status
                         vue.options.education = status
-                        vue.options.exams_score = status
+                        // vue.options.exams_score = status
                         vue.options.work = status
                     }
 
@@ -582,6 +596,9 @@
                 $(document).on('change', 'input[data-cbgrp-toggle="sop"]', function (){
                     vue.options.sop_colleges = $(this).is(':checked') ? vue.colleges.map(o => o.id) : [];
                 })
+                $(document).on('change', 'input[data-cbgrp-toggle="exam"]', function (){
+                    vue.options.exams_score = $(this).is(':checked') ? vue.exams.map(o => o.id) : [];
+                })
 
                 $(document).on('change', 'input[data-cbgrp-toggle="rcc"]', function (){
                     vue.options.received_call_colleges = $(this).is(':checked') ? vue.colleges.map(o => o.id) : [];
@@ -594,7 +611,8 @@
                 })
             },
             created(){
-                this.fetchColleges()
+                this.fetchColleges(),
+                this.fetchExams()
             },
             methods: {
                 cl(...logs){
@@ -627,6 +645,17 @@
                         .then((response) => {
                             this.colleges = response
                             this.colleges.push(data);
+                        })
+                },
+                fetchExams(){
+                    data={id:0,name:"Other"};
+                    const url = new URL("{{ route('api.admin.get-exams') }}");
+                    
+                    fetch(url.toString())
+                        .then(response => response.json())
+                        .then((response) => {
+                            this.exams = response
+                            this.exams.push(data);
                         })
                 },
                 submitForm() {

@@ -56,8 +56,10 @@
 											<div class="col-12">
 												<label for="is_student" class="form-label">Are You CATKing Student ?</label>
 												<select class="form-select" id="is_student" name="is_catking_student" aria-label="Default select example" required>
-													<option value="no" {{old('is_catking_student')=='no'?'selected=selected':''}}} >No</option>
-                                                    <option value="yes" {{old('is_catking_studentis_catking_student')=='yes'?'selected=selected':''}}}>Yes</option>
+													<option value="yes" {{old('is_catking_student')=='yes'?'selected=selected':''}}>Yes - Classroom student</option>
+													<option value="mocks" {{old('is_catking_student')=='mocks'?'selected=selected':''}}>Yes - Mocks student</option>
+													<option value="gdpi" {{old('is_catking_student')=='gdpi'?'selected=selected':''}}>Yes - GDPI student</option>
+													<option value="no" {{old('is_catking_student')=='no'?'selected=selected':''}} >No</option>
 												</select>
 												@if($errors->has('is_catking_student'))
 													<div class="error">{{ $errors->first('is_catking_student') }}</div>

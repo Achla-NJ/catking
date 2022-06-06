@@ -10,13 +10,13 @@
         }
         elseif($class_type == "graduation" || $class_type == "post_graduation"){
             $board_name_label = 'Degree';
-            $other_board_name_label = "Course Name";
+            $other_board_name_label = "Degree Name";
             $school_name_label = "College";
         }
         elseif($class_type == "diploma" || $class_type == "other"){
             $board_name_label = 'Course';
-            $other_board_name_label = "Course Name";
-            $school_name_label = "institute";
+            $other_board_name_label = "Degree Name";
+            $school_name_label = "Institute";
         }
     @endphp
 
@@ -105,12 +105,12 @@
                         </div>
                     </div>
                     <div class="row" id="other_input_{{$relation}}"></div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="mb-3">
                             <label class="form-label">Summary</label>
                             <input type="text" name="educations[{{$relation}}][summary]" id="class" class="form-control">
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             @endif
         </div>

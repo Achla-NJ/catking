@@ -734,7 +734,7 @@
          </div>
          <div class="card w-100 radius-10">
             <div class="card-body">
-               <div class="chart-container-1">
+               <div class="chart-container-0">
                   <degree-chart  :degree-labels="Object.keys(student_degree)" :degree-data="Object.values(student_degree)"  chart-id="degree-chart" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
                </div>
                
@@ -759,7 +759,7 @@
          </div>
          <div class="card w-100 radius-10">
             <div class="card-body">
-               <div class="chart-container-1">
+               <div class="chart-container-2">
                   <work-chart :chart-data="Object.values(work_percent)" chart-id="work-chart-217921" style="position: absolute;width:100%;height:100%;top:0;left:0;"/>
 
                </div>
@@ -1022,7 +1022,8 @@
                         pointHoverBackgroundColor: gradientStroke1,
                         // backgroundColor: gradientStroke1,
                         borderColor: gradientStroke1,
-                        borderWidth: 3
+                        borderWidth: 3,
+                        fill: false,
                      },
                      
                      {
@@ -1032,7 +1033,8 @@
                         pointHoverBackgroundColor: gradientStroke2,
                         // backgroundColor: gradientStroke2,
                         borderColor: gradientStroke2,
-                        borderWidth: 3
+                        borderWidth: 3,
+                        fill: false,
                    },
                    {
                         label: 'CATKing Students',
@@ -1041,7 +1043,8 @@
                         pointHoverBackgroundColor: gradientStroke3,
                         // backgroundColor: gradientStroke3,
                         borderColor: gradientStroke3,
-                        borderWidth: 3
+                        borderWidth: 3,
+                        fill: false,
                    }
                   ]
                },
@@ -1226,7 +1229,8 @@
                         pointHoverBackgroundColor: gradientStroke1,
                         // backgroundColor: gradientStroke1,
                         borderColor: gradientStroke1,
-                        borderWidth: 3
+                        borderWidth: 3,
+                        fill: false,
                      },
                      {
                         label: 'Actual Growth',
@@ -1235,7 +1239,8 @@
                         pointHoverBackgroundColor: gradientStroke2,
                         // backgroundColor: gradientStroke2,
                         borderColor: gradientStroke2,
-                        borderWidth: 3
+                        borderWidth: 3,
+                        fill: false,
                    },
                   ]
                },

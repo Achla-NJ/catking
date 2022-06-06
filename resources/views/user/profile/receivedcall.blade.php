@@ -163,7 +163,9 @@
                         </div>
                         <div class="row align-items-center mb-2">
                            <div class="col-12">
-                              <div class="bg-primary-4 font-20 h5 mb-4 p-2 "> Converted Calls</div>
+                              <div class="bg-primary-4 font-20 h5 mb-4 p-2 "> Converted Calls <span style="font-size:13px;">
+                                (Update your convert details to receive a free CATKing Achiever T-Shirt) </span>
+                              </div>
                            </div>
                            <div class="col-12">
                               @foreach ($user['converted_call_colleges'] as $converted_key => $converted_call)

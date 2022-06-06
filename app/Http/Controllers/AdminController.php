@@ -131,9 +131,15 @@ class AdminController extends Controller
         }
 
         $is_catking_student = @$filters['is_catking_student']?:'both';
-        if(in_array($is_catking_student, ['yes', 'no'])){
-            $data = $data->where("u.is_catking_student", $is_catking_student);
+        if($filters['is_catking_student'] == 'yes'){
+            $data = $data->whereIn("u.is_catking_student",['yes','mocks','gdpi']);
+            
+        }else{
+            if(in_array($is_catking_student, ['yes', 'no'])){
+                $data = $data->where("u.is_catking_student", $is_catking_student);
+            }
         }
+        
 
         $exams = @$filters['exams']?:[];
 
