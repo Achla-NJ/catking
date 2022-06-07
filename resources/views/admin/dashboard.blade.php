@@ -260,12 +260,12 @@
    </div>
 
    <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
          <div class="card-header bg-transparent px-0">
             <div class="d-block align-items-center">
                <div class="row gy-3 gy-lg-0">
                   <div class="col">
-                     <h6 class="mb-0">Actual vs Target profile registration achieved</h6>
+                     <h6 class="mb-3">Actual vs Target profile registration achieved</h6>
                   </div>
                   <div class="col-auto">
                      <a data-bs-toggle="modal" data-bs-target="#exampleModal" role="button" class="btn-sm btn-primary"><i class="fa fa-edit"></i>
@@ -273,6 +273,8 @@
                   </div>
                </div>
             </div>
+         </div>
+         <div class="row align-items-center mb-3">
          </div>
          <div class="card radius-10 ">
             <div class="card-body">
@@ -285,18 +287,28 @@
           
          </div>
       </div>
-   </div>
-
-   <div class="row">
       <div class="col-md-6">
          <div class="card-header bg-transparent mb-3 px-0">
             <div class="row gy-3">
-               <div class="col-12">
+               <div class="col-md-6">
                   <h6 class="mb-0">Distribution of Students</h6>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-auto">Select Year</div>
+                     <div class="col">
+                        <select class="form-control" @change.prevent="fetchCatkingGrowth" id="catking-growth-year" name="year-range">
+                           @for ($i = date('Y'); $i >= 1990; $i--)
+                              <option value="{{$i}}" {{ $i==date('Y') ? "selected":''}}>{{$i}}</option>
+                           @endfor
+                        </select>
+                     </div>
+                  </div>
+                  
                </div>
             </div>
          </div>
-         <div class="row align-items-center mb-3">
+         {{-- <div class="row align-items-center mb-3">
             <div class="col-md-5">
                Select Year:
             </div>
@@ -307,7 +319,7 @@
                @endfor
                </select>
             </div>
-         </div>
+         </div> --}}
          <div class="card radius-10 ">
             <div class="card-body">
                <div class="chart-container-1">
@@ -317,6 +329,10 @@
             </div>
          </div>
       </div>
+   </div>
+
+   {{-- <div class="row">
+      
       <div class="col-md-6">
          <div class="card-header bg-transparent mb-3 px-0">
             <div class="row gy-3">
@@ -348,7 +364,7 @@
          </div>
       </div>
       
-   </div>
+   </div> --}}
 
    <div class="row">
       <div class="col-md-6">
@@ -625,6 +641,12 @@
                   <div class="p-3 text-center">
                      <h4 class="mb-0 text-orange">@{{sops.review}}</h4>
                      <p class="mb-0">Reviewed</p>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="p-3 text-center">
+                     <h4 class="mb-0 text-gray">@{{sops.upload-sops.review}}</h4>
+                     <p class="mb-0">Pending</p>
                   </div>
                </div>
             </div>
@@ -1866,7 +1888,7 @@
    
                   ]
                },
-               { responsive: true, maintainAspectRatio: false }
+               { responsive: true, maintainAspectRatio: false,legend: {display: false}, }
             );
          }
       },

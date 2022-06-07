@@ -29,7 +29,7 @@
  @section('main_content')
 
         <div class="row">
-            <div class="col-12 col-md-auto">
+            <div class="col-12 ">
                 <div class="card">
                     <div class="card-body">
                 <form action="{{route('admin.search-pi-student')}}" method="post" id="search-form" onsubmit="return false;">

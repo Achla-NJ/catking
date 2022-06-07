@@ -84,7 +84,7 @@ class DashboardController extends Controller
 
             foreach($exams as $exam){
                 $exam_name = strtoupper($exam->type);
-                $user_exam[$exam->type] = StudentExam::query()->whereBetween('updated_at', [$from, $to])->where('type',$exam_name)->get()->count();
+                $user_exam[$exam_name] = StudentExam::query()->whereBetween('updated_at', [$from, $to])->where('type',$exam_name)->get()->count();
             }
         }
         return response()->json([
@@ -105,7 +105,7 @@ class DashboardController extends Controller
         $exams = StudentExam::query()->whereBetween('updated_at', [$from, $to])->where('type',$rexam)->where('score','!=','')->get();
 
         foreach($exams ?? [] as $exam){
-            $score[$exam->type]['below 60'] = ($exam->score <60) ? $fifty++ : $fifty;
+            $score[$exam->type]['Below 60'] = ($exam->score <60) ? $fifty++ : $fifty;
             $score[$exam->type]['60-70'] = ($exam->score >=60 && $exam->score <70) ? $sixty++ : $sixty;
             $score[$exam->type]['70-80'] = ($exam->score >=70 && $exam->score <80) ? $seventy++ : $seventy;
             $score[$exam->type]['80-90'] = ($exam->score >=80 && $exam->score <90) ? $eighty++ : $eighty;
@@ -113,7 +113,7 @@ class DashboardController extends Controller
            
         }
         if(count($score)== 0){
-            $score[$rexam]['below 60'] = 0;
+            $score[$rexam]['Below 60'] = 0;
             $score[$rexam]['60-70'] = 0;
             $score[$rexam]['70-80'] = 0;
             $score[$rexam]['80-90'] = 0;

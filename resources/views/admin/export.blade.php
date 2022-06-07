@@ -225,7 +225,7 @@
                                             v-model="options.exams_score"
                                             :options="exams"
                                             label="name"
-                                            placeholder="exams scores"
+                                            placeholder="Exams Scores"
                                             taggable
                                             multiple
                                             :reduce="option => option.id"

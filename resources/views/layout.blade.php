@@ -156,7 +156,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 						<a href="{{route('profile')}}">
 							<div class="parent-icon"><i class='bx bx-star'></i>
 							</div>
-							<div class="menu-title">Profile feedback</div>
+							<div class="menu-title">Profile Feedback</div>
 						</a>
 					</li>
 					{{-- <li> <a href="{{route('profile.review')}}">Profile Review</a>
@@ -197,7 +197,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 						<a href="{{route('view-page',$wat_page->slug)}}">
 							<div class="parent-icon"><i class='lni lni-layers'></i>
 							</div>
-							<div class="menu-title">WATPI dockets</div>
+							<div class="menu-title">WATPI Dockets</div>
 						</a>
 					</li>
 				@endif
@@ -257,6 +257,13 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 						</a>
 					</li>
 					<li>
+						<a href="https://api.whatsapp.com/send?phone=8999118999" target="blank">
+							<div class="parent-icon"><i class="lni lni-whatsapp"></i>
+							</div>
+							<div class="menu-title">Whatsapp</div>
+						</a>
+					</li>
+					<li>
 						<a href="https://catking.in/" target="blank">
 							<div class="parent-icon"><i class='bx bx-link-external'></i>
 							</div>
@@ -284,13 +291,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							<div class="menu-title">Instagram</div>
 						</a>
 					</li>
-					<li>
-						<a href="https://api.whatsapp.com/send?phone=8999118999" target="blank">
-							<div class="parent-icon"><i class="lni lni-whatsapp"></i>
-							</div>
-							<div class="menu-title">Whatsapp</div>
-						</a>
-					</li>
+					
 				@endif
 			</ul>
 			<!--end navigation-->
@@ -334,6 +335,11 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 								<a class="dropdown-item" href="tel:+918999118999">
 									<i class='bx bx-phone-call'></i>
 									<span>Phone</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="https://api.whatsapp.com/send?phone=8999118999" target="blank">
+									<i class='lni lni-whatsapp'></i><span>Whatsapp</span>
 								</a>
 							</li>
 							<li>
