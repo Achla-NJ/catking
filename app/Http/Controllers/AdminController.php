@@ -383,11 +383,12 @@ class AdminController extends Controller
 
     public function sopMail(Request $request){
         $sop = StudentSopColleges::query()->find($request->id);
+        $college = College::query()->find($sop->college_id);
 
         if($sop && @$sop->user){
             \Mail::to($sop->user->email)->send(new \App\Mail\Mail([
                 'title' => 'Sop Review',
-                'body' => 'College Sop has been reviewed.',
+                'body' => $college->name.' College Sop has been reviewed.',
             ]));
             return response()->json([
                 "success" => true,

@@ -130,6 +130,22 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        <div class="col-6 col-md">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="checkbox" v-model="options.personal_info.address" />
+                                                    Address
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="checkbox" v-model="options.personal_info.city" />
+                                                    City
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -530,6 +546,8 @@
                             whatsapp_number: true,
                             state: true,
                             is_catking_student: true,
+                            address:true,
+                            city:true
                         },
                         education: false,
                         work: false,

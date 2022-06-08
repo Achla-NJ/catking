@@ -9,6 +9,17 @@
 				<div class="card-body">
 					<form  method="POST" action="{{route('password-reset-otp')}}">
 						@csrf
+						@csrf
+						@if(Session::has('error-msg'))
+							<div class="alert alert-danger">
+							{{ Session::get('error-msg')}}
+							</div>
+						@endif
+						@if(Session::has('success-msg'))
+							<div class="alert alert-success">
+							{{ Session::get('success-msg')}}
+							</div>
+						@endif
 					<div class="p-4 rounded  border">
 						<div class="text-center">
 							<img src="assets/images/icons/forgot-2.png" width="120" alt="" />

@@ -425,9 +425,9 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 				<img src="{{asset('assets/images/kpmgok.png')}}" style="max-height:35px;"/>
 			</div> --}}
 			<div class="container-fluid">
-				<div class="row align-items-center">
-					<div class="col">
-						<div class="d-flex aling-items-center align-items-center">
+				<div class="row align-items-center row-cols-1 row-cols-md-3">
+					<div class="col text-center">
+						<div class="d-flex align-items-center justify-content-center justify-content-md-start">
 							<div class="h6 text-start mb-0 me-2">Follow Us</div>
 							<a href="https://www.youtube.com/c/RahulCatking" class="d-inline-flex font-30 text-body me-2">
 								<i class="lni lni-youtube"></i>
@@ -437,7 +437,7 @@ $broadcast_message_description = \App\Models\Setting::val('broadcast_message_des
 							</a>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col text-center">
 						<p class="mb-0">Copyright © 2022. All right reserved.
 						</p>
 					</div>
