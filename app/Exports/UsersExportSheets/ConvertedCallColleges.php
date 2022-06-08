@@ -36,8 +36,10 @@ class ConvertedCallColleges implements FromCollection, WithTitle, WithHeadings
         foreach ($this->colleges as $college) {
             $this->columns["college_$college->id"] = $college->name;
         }
-
-        $this->columns["college_others"] = "Others";
+        if(in_array(0,$converted_call_colleges)){
+            $this->columns["college_others"] = "Others";
+        }
+        
         $this->college_ids = $this->colleges->pluck('id')->toArray();
     }
 
@@ -63,7 +65,11 @@ class ConvertedCallColleges implements FromCollection, WithTitle, WithHeadings
             $college_ids["rf_$user_id"] = $user->converted_call_colleges->pluck('college_id')->toArray();
             foreach ($this->colleges as $college) {
                 $file = $user->converted_call_colleges()->where('college_id',$college->id)->pluck('file')->first();
-                $result["rf_$user_id"]["college_$college->id"] = in_array($college->id, $college_ids["rf_$user_id"])? route('user-files', $file): "No";
+                if(!empty($file)){
+                    $result["rf_$user_id"]["college_$college->id"] = in_array($college->id, $college_ids["rf_$user_id"])? route('user-files', $file): "No";
+                }else{
+                    $result["rf_$user_id"]["college_$college->id"] ="No";
+                }
             }
             $other_colleges["rf_$user_id"] = $user->converted_call_colleges()
                 ->join('colleges', 'colleges.id', 'student_converted_call_colleges.college_id')
