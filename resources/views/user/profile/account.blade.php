@@ -173,6 +173,17 @@
                               <input type="hidden" value="{{$user_id}}" name="user_id" id="user_id">
                               <div class="col-md-6">
                                  <div class="mb-3">
+                                    <label for="apperaring_for" class="form-label">Appearing For</label>
+                                    <select name="apperaring_for" id="apperaring_for" class="form-control">
+                                       <option value="">-Select-</option>
+                                       @foreach (\App\Models\Exam::all() as $exam)
+                                          <option value="{{$exam->name}}"  {{$exam->name == Auth::user()->apperaring_for?'selected':''}}>{{$exam->name}}</option>
+                                       @endforeach
+                                    </select>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="mb-3">
                                     <label for="name" class="form-label">Full Name</label>
                                     <input type="text" name="name" id="name" class="form-control" value="{{$user->name}}">
                                  </div>
@@ -237,7 +248,7 @@
                                     </select>
                                  </div>
                               </div>
-                              <div class="col-12">
+                              <div class="col-md-6">
                                  <div class="mb-3">
                                     <label for="address" class="form-label">Address</label>
                                     <input type="text" name="address" id="address" class="form-control" value="{{$user->address}}">
@@ -297,7 +308,7 @@
                                     $other_board_name_label = "Degree name";
                                     $school_name_label = "Institute";
                               }
-                           @endphp
+                           @endphp 
                            {{-- @dump($class_type) --}}
                            {{-- @continue --}}
 

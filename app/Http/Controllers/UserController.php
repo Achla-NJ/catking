@@ -305,6 +305,11 @@ class UserController extends Controller
 
     public function updatePersonalInfo(Request $request)
     {
+        $request->validate(
+            ["apperaring_for" => "required"],
+            ['apperaring_for.required' => 'Appearing For Field is required'],
+        );
+
         if(!empty($request->user_id)){
             $user = User::query()->where('id',$request->user_id)->first();
         }else{
@@ -318,6 +323,7 @@ class UserController extends Controller
         $user->address = $request->input("address");
         $user->city = $request->input("city");
         $user->state = $request->input("state");
+        $user->apperaring_for = $request->input("apperaring_for");
         $user->update();
         return response()->json([
             "success" => true,

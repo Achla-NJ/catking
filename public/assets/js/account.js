@@ -94,7 +94,11 @@ function avatarSave(){
         error:function(response){
             $(".form-loader").removeClass('show');
             $('body').removeClass('overflow-hidden');
-            failMessage(response.responseJSON.message)
+            let errors = Object.values(response.responseJSON.errors);
+            errors.map((er)=>{
+                failMessage(er)
+            });
+            // failMessage(response.responseJSON.message)
         }
     });
  }
