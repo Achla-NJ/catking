@@ -19,7 +19,15 @@
 										<p>Already have an account? <a href="{{route('login')}}" class="bg-primary-3 px-2 py-1 radius-5 shadow-sm text-body ms-2">Sign in here</a>
 										</p>
 									</div>
-									
+									@if(count($errors) > 0 )
+									<div class="alert alert-danger alert-dismissible fade show" role="alert">
+										<ul class="p-0 m-0" style="list-style: none;">
+											@foreach($errors->all() as $error)
+											<li>{{$error}}</li>
+											@endforeach
+										</ul>
+									</div>
+									@endif
 									<div class="form-body">
 										<form class="row g-3" method="POST" action="{{route('signup')}}">
                                             @csrf
@@ -48,7 +56,7 @@
 											</div>
                                             <div class="col-12">
                                                 <label for="phone" class="form-label">Phone</label>
-                                                <input type="text" name="mobile_number" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="+91987654321" class="form-control" required value={{old('mobile_number')}} >
+                                                <input type="number" name="mobile_number" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="+91987654321" class="form-control" required value={{old('mobile_number')}} >
 												@if($errors->has('mobile_number'))
 													<div class="error">{{ $errors->first('mobile_number') }}</div>
 												@endif

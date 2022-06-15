@@ -57,12 +57,17 @@ class ReviewController extends Controller
 
         $user = User::query()->where('id', $reviews['student_id'])->first(['email']);
         $user_email = $user['email'];
-        $title = 'Review of '.$reviews['type'];
         $details = [
-            'title' => $title,
-            'body' => $reviews['type'].' has been reviewed.',
+            'email' => $user_email,
+            'type' => $reviews['type']
             ];
-        \Mail::to($user_email)->send(new \App\Mail\Mail($details));
+        if($reviews['type'] == 'profile'){
+            $subject = "CATKing Profile Review is Completed. Check your feedback on MyCATKing";
+        }
+        if($reviews['type'] == 'interview'){
+            $subject = "CATKing Mock Personal Interview Feedback Updated on MyCATKing";
+        }
+        \Mail::to($user_email)->send(new \App\Mail\Mail($details,$subject));
 
         return response()->json(["success" => true,"message" =>'Data Saved Successfully']);
         // $request->session()->flash('success','Data Saved Successfully');
@@ -93,11 +98,18 @@ class ReviewController extends Controller
         $user = User::query()->where('id',$request->id)->first(['email']);
         $user_email = $user['email'];
         $title = 'Review of '.$request->rtype;
+
         $details = [
-            'title' => $title,
-            'body' => $request->rtype.' has been reviewed.',
+            'email' => $user_email,
+            'type' => $request->rtype
             ];
-        \Mail::to($user_email)->send(new \App\Mail\Mail($details));
+        if($request->rtype == 'profile'){
+            $subject = "CATKing Profile Review is Completed. Check your feedback on MyCATKing";
+        }
+        if($request->rtype == 'interview'){
+            $subject = "CATKing Mock Personal Interview Feedback Updated on MyCATKing";
+        }
+        \Mail::to($user_email)->send(new \App\Mail\Mail($details,$subject));
 
         $msg ='Mail Sent to '.$user_email;
         return  response()->json([

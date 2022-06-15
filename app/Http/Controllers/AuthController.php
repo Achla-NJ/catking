@@ -54,11 +54,14 @@ class AuthController extends Controller
             $signup = $user->save();
             if($signup){
                 $details = [
-                    'title' => 'New Registration',
-                    'body' => $user->email.' Create New Account',
+                    'email' => $user->email,
+                    'username' => $user->name,
+                    'password' => $user->password,
+                    'type'=>'registraion'
                 ];
+                $subject="Welcome to MyCATKing. Your Account is Successfully Created !";
 
-                \Mail::to('profile.catking@gmail.com')->send(new Mail($details));
+                \Mail::to(['profile.catking@gmail.com',$user->email])->send(new Mail($details,$subject));
                 return redirect()->route('profile.account');
             }
         }
@@ -133,11 +136,13 @@ class AuthController extends Controller
             }
 
             $details = [
-                'title' => 'OTP For Reset Password',
-                'body' => 'This is your OTP '. $random,
+                'email' => $request->post('email'),
+                'otp' => $random,
+                'type'=>'otp'
             ];
+            $subject=" MyCATKing: Validate OTP for Resetting the Password";
 
-            \Mail::to($request->email)->send(new Mail($details));
+            \Mail::to($request->email)->send(new Mail($details,$subject));
 
             $msg ='Mail Sent to Your Email';
             $request->session()->flash('success-msg',$msg);

@@ -133,7 +133,7 @@ Route::group(['middleware'=> 'auth'],function(){
         Route::post('update-curricular',[UserController::class,'updateCurricular'])->name('update-curricular');
         Route::get('update-work-hard',[UserController::class,'updateWorkHardStatus'])->name('update-work-hard');
     });
-});
+
 
 
 Route::post('insert-college',[CollegeController::class,'store'])->name('insert-college');
@@ -161,7 +161,7 @@ Route::post('cat-score-predictor',[CatPredictorController::class,'score'])->name
 Route::get('view-page/{slug}',[CustomPageController::class,'view'])->name('view-page');
 Route::get('new-page/{id}',[CustomPageController::class,'newpage'])->name('new-page');
 
-
+});
 Route::get('command/{command}', function ($command){
     if($command == 'reset'){
         \Illuminate\Support\Facades\Artisan::call('view:clear');

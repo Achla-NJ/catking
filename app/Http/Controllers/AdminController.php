@@ -386,10 +386,14 @@ class AdminController extends Controller
         $college = College::query()->find($sop->college_id);
 
         if($sop && @$sop->user){
-            \Mail::to($sop->user->email)->send(new \App\Mail\Mail([
-                'title' => 'Sop Review',
-                'body' => $college->name.' College Sop has been reviewed.',
-            ]));
+            $details = [
+                'email' =>$sop->user->email,
+                'college' => $college->name,
+                'type'=>'sop'
+            ];
+            $subject="CATKing $college->name SOP Review is Done. Check your Feedback on MyCATKing";
+
+            \Mail::to($sop->user->email)->send(new \App\Mail\Mail($details,$subject));
             return response()->json([
                 "success" => true,
                 "message" => __("app.mail"),
