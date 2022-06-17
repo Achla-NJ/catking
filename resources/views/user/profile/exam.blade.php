@@ -117,7 +117,7 @@
                                     </div>
                                        @if(!empty($score_card))
                                        <div class="col-md-2 col-lg-auto cat_{{$exam_key}} {{$display}} my-auto" id="sop_card{{$exam_key}}">
-                                          <a href="{{route('user-files', $score_card)}}" class="btn btn-warning " target="_blank" >View</a>
+                                          <a href="{{asset('storage/uploads/user-files/'.$score_card)}}" class="btn btn-warning " target="_blank" >View</a>
                                        </div>
                                        @endif
 

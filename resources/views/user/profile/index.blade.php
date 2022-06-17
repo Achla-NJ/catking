@@ -486,7 +486,7 @@
                                         </div>
                                         <div class="col-md-3 {{$display}}">
                                             <div class="h6 ">Score Card</div>
-                                            <a href="{{route('user-files', $score_card)}}" target="_blank" class="btn btn-dark btn-sm mb-0 shadow">
+                                            <a href="{{asset('storage/uploads/user-files/'.$score_card)}}" target="_blank" class="btn btn-dark btn-sm mb-0 shadow">
                                                 <i class="animated bx bx-bar-chart-square"></i>
                                                 View
                                             </a>
@@ -705,7 +705,7 @@
                                             <div class="bg-body border-5 border-bottom border-primary-1 px-2 py-3 shadow-sm radius-5">
                                                 <div class="h6 mb-0 py-2">{{$college}}</div>
                                                 <div class="d-flex flex-wrap justify-content-around">
-                                                    <a href="{{route('user-files', $call_file)}}" target="blank" class="btn btn-warning btn-sm mt-2">View</a>
+                                                    <a href="{{asset('storage/uploads/user-files/'.$call_file)}}" target="blank" class="btn btn-warning btn-sm mt-2">View</a>
                                                 </div>
                                             </div>
                                         </div>

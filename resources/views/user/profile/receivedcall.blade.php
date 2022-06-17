@@ -201,7 +201,7 @@
                                              </div>
                                              @if(!empty($call_file))
                                                 <div class="col-md-1 my-auto" id="sop_card{{$converted_key}}">
-                                                   <a href="{{route('user-files', $call_file)}}" class="btn btn-warning " target="_blank" >View</a>
+                                                   <a href="{{asset('storage/uploads/user-files/'.$call_file)}}" class="btn btn-warning " target="_blank" >View</a>
                                                 </div>
                                                 @endif
                                           </div>

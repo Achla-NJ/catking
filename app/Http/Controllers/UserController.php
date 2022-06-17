@@ -269,7 +269,7 @@ class UserController extends Controller
     }
 
     public function updateProfile(Request $request)
-    {
+    {        
         if ($request->file("avatar")) {
             $validatedData = $request->validate([
                 "avatar" => "required|image|mimes:jpg,png,jpeg",
@@ -278,14 +278,23 @@ class UserController extends Controller
             if ($validatedData) {
                 // $filename = time().'_'.$file->getClientOriginalName();
                 $upload = $request->file("avatar")->store(User::FILES_PATH);
-                auth()
-                    ->user()
+
+                if(!empty($request->user_id)){
+                    $user = User::where('id',$request->user_id)->update([
+                        "avatar" => ltrim(
+                            str_replace(User::FILES_PATH, "", $upload),
+                            "/"
+                        ),
+                    ]);
+                }else{
+                    auth()->user()
                     ->update([
                         "avatar" => ltrim(
                             str_replace(User::FILES_PATH, "", $upload),
                             "/"
                         ),
                     ]);
+                }                
             }
         }
         return response()->json([

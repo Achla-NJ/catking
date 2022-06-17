@@ -176,10 +176,10 @@
                                     <label for="apperaring_for" class="form-label">Appearing For</label>
                                     <select name="apperaring_for" id="apperaring_for" class="form-control">
                                        <option value="">-Select-</option>
-                                       <option value="CAT 2021" {{Auth::user()->apperaring_for == "CAT 2021" ?'selected':''}}>CAT 2021</option>
-                                       <option value="CAT 2022" {{Auth::user()->apperaring_for == "CAT 2022" ?'selected':''}}>CAT 2022</option>
-                                       <option value="CAT 2023" {{Auth::user()->apperaring_for == "CAT 2023" ?'selected':''}}>CAT 2023</option>
-                                       <option value="CAT 2024" {{Auth::user()->apperaring_for == "CAT 2024" ?'selected':''}}>CAT 2024</option>
+                                       <option value="CAT 2021" {{$user->apperaring_for == "CAT 2021" ?'selected':''}}>CAT 2021</option>
+                                       <option value="CAT 2022" {{$user->apperaring_for == "CAT 2022" ?'selected':''}}>CAT 2022</option>
+                                       <option value="CAT 2023" {{$user->apperaring_for == "CAT 2023" ?'selected':''}}>CAT 2023</option>
+                                       <option value="CAT 2024" {{$user->apperaring_for == "CAT 2024" ?'selected':''}}>CAT 2024</option>
                                     </select>
                                  </div>
                               </div>

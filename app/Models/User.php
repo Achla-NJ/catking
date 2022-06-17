@@ -189,7 +189,8 @@ class User extends Authenticatable
             return asset('assets/images/avatars/user.png');
         }
         if(file_exists(storage_path("app".DIRECTORY_SEPARATOR.self::FILES_PATH.DIRECTORY_SEPARATOR.$value))){
-            return route("user-files", $value);
+            return asset('storage/uploads/user-files/'.$value);
+            // return route("user-files", str_replace('files/profile/','',$value));
         }
         return "https://profile.catking.in/lib/$value";
     }

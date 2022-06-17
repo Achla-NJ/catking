@@ -61,7 +61,7 @@
 								<div class="row align-items-center">
 									<div class="col-auto" id="sop_card{{$sop_key}}">
 										@if(!empty($sop_file))
-										<a href="{{route('user-files', $sop_file)}}" class="btn btn-warning " target="_blank"  >View</a>
+										<a href="{{asset('storage/uploads/user-files/'.$sop_file)}}" class="btn btn-warning " target="_blank"  >View</a>
 										@endif
 									</div>
 									@if (!empty($sop_review))									

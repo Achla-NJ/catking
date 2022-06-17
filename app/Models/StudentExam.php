@@ -27,7 +27,8 @@ class StudentExam extends Model
             return "";
         }
         if(file_exists(storage_path("app".DIRECTORY_SEPARATOR.User::FILES_PATH.DIRECTORY_SEPARATOR.$file))){
-            return route("user-files", $file);
+            return asset('storage/uploads/user-files/'.$file);
+            // return route("user-files", $file);
         }
         return "https://profile.catking.in/lib/$file";
     }

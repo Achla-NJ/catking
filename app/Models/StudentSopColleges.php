@@ -36,7 +36,8 @@ class StudentSopColleges extends Model
             return null;
         }
         if(file_exists(storage_path("app".DIRECTORY_SEPARATOR.User::FILES_PATH.DIRECTORY_SEPARATOR.$this->file))){
-            return route("user-files", $this->file);
+            return asset('storage/uploads/user-files/'.$this->file);
+            // return route("user-files", $this->file);
         }
         return "https://profile.catking.in/lib/{$this->file}";
     }
