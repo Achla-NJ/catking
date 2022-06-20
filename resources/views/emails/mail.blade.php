@@ -13,7 +13,6 @@
         
         <p>You have successfully signed up and created an account with us. The login URL for MyCATKing is mycatking.com</p>
         <p>Username : {{ $details['username'] }}</p>
-        <p>Password: {{ $details['password'] }}</p>
         
         <p>Complete your profile to get the Profile review from CATKing mentors. After exams, You can also use the same portal for Score Calculator and Personal Interview Preparation Dashboard. </p>
         
